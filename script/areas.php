@@ -4,6 +4,8 @@
         private $message;
         private $queryPostAreas = 'INSERT INTO areas (name_area) VALUES (:name_area)';
         private $queryGetAreas = 'SELECT id AS Id_Area, name_area AS Nombre_Area FROM areas';
+        private $queryUpdateAreas = 'UPDATE areas SET name_area = :name_area WHERE id = :id_areas';
+        private $queryDeleteAreas = 'DELETE FROM areas WHERE id = :id_areas';
 
         public function __construct(){parent::__construct();}
 
@@ -36,7 +38,35 @@
             }
         }
 
-        public function 
+        public function UpdateAreas($name_area, $id_areas){
+            try {
+                $res = $this->connec->prepare($this->queryUpdateAreas);
+                $res->bindValue("name_area", $name_area);
+                $res->bindValue("id_areas", $id_areas);
+                $res->execute();
+                $this->message = ["STATUS" => 200, "MESSAGE" => "Actualizado Safistactoriamente"];
 
+            } catch (\PDOException $error) {
+                $this->message = $error->getMessage();
+
+            } finally {
+                print_r($this->message);
+            }
+        }
+
+        public function DeleteAreas($id_areas){
+            try {
+                $res = $this->connec->prepare($this->queryDeleteAreas);
+                $res->bindValue("id_areas", $id_areas);
+                $res->execute();
+                $this->message = ["STATUS" => 200, "MESSAGE" => "Eliminado Exitosamente"];
+
+            } catch (\PDOException $error) {
+                $this->message = $error->getMessage();
+                
+            } finally {
+                print_r($this->message);
+            }
+        }
     }
 ?>
