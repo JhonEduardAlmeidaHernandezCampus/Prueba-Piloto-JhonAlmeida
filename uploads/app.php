@@ -4,8 +4,8 @@
         public static function getInstance() {
             $arg = func_get_args();
             $arg = array_pop($arg);
-            return (self::$instance == null) ? self::$instance = new self(...(array) $arg) : self::$instance;
-            // return (!(self::$instance instanceof self) || !empty($arg)) ? self::$instance = new static(...(array) $arg) : self::$instance;
+            // return (self::$instance == null) ? self::$instance = new self(...(array) $arg) : self::$instance;
+            return (!(self::$instance instanceof self) || !empty($arg)) ? self::$instance = new static(...(array) $arg) : self::$instance;
         }
 
         //modificadores de acceso 
@@ -38,8 +38,9 @@
     }
     spl_autoload_register('autoload');
 
-    $obj = new connect();
+    // country regions::getInstance(json_decode(file_get_contents("php://input"), true))->postRegion("Huarochirí", 2);
+    // country regions::getInstance()->getRegion();
+    // country regions::getInstance(json_decode(file_get_contents("php://input"), true))->UpdateRegion("Machu Picchu", 2, 1);
+    regions::getInstance()->DeleteRegion(3);
 
-/*     client::getInstance(json_decode(file_get_contents("php://input"), true))->getClient();
- */
 ?>
