@@ -38,9 +38,9 @@
     }
     spl_autoload_register('autoload');
 
-    // country regions::getInstance(json_decode(file_get_contents("php://input"), true))->postRegion("Huarochirí", 2);
-    // country regions::getInstance()->getRegion();
-    // country regions::getInstance(json_decode(file_get_contents("php://input"), true))->UpdateRegion("Machu Picchu", 2, 1);
-    regions::getInstance()->DeleteRegion(3);
+    // areas::getInstance(json_decode(file_get_contents("php://input"), true))->postAreas("área de mantenimiento");
+    areas::getInstance()->getAreas();
+    // cities::getInstance(json_decode(file_get_contents("php://input"), true))->UpdateCities("Peru", 1);
+    // cities::getInstance()->DeleteCities(7);
 
 ?>
