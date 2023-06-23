@@ -38,9 +38,9 @@
     }
     spl_autoload_register('autoload');
 
-    // contact_info::getInstance(json_decode(file_get_contents("php://input"), true))->postContactInfo(4, "+573005559677", "Jhon Hernandez", "https://www.linkedin.com/", "Jhonhernandez.campus@gmail.com", "Zafiro Piedecuesta", "573005559677");
-    // contact_info::getInstance()->getContactInfo();
-    // contact_info::getInstance(json_decode(file_get_contents("php://input"), true))->UpdateContactInfo(4, "+573005559677", "Jhon Hernandez", "https://www.linkedin.com/", "Jhonhernandez.1899@gmail.com", "Calle 11B # 1A - 20", "+573005559677", 12);
-    contact_info::getInstance()->DeleteContactInfo(12);
+    // teachers::getInstance(json_decode(file_get_contents("php://input"), true))->postTeachers(2, 1, 1, 1, 1);
+    // teachers::getInstance()->getTeachers();
+    // teachers::getInstance(json_decode(file_get_contents("php://input"), true))->updateTeachers(2, 1, 1, 1, 2, 2);
+    // teachers::getInstance()->deleteTeachers(1);
 
 ?>
