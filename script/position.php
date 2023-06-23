@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class position extends connect{
         use getInstance;
         private $message;

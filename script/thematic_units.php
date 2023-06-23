@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class thematic_units extends connect{
         use getInstance;
         private $message;

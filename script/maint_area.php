@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class maint_area extends connect{
         use getInstance;
         private $message;

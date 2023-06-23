@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class design_area extends connect{
         use getInstance;
         private $message;

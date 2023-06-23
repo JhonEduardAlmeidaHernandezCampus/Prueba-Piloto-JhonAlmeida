@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class teachers extends connect{
         use getInstance;
         private $message;
@@ -32,7 +33,7 @@
             try {
                 $res = $this->connec->prepare($this->queryGetTeachers);
                 $res->execute();
-                $this->message = ["STATUS" => 200, "MESSAGE" =>$res->fetchAll(PDO::FETCH_ASSOC)];
+                $this->message = ["STATUS" => 200, "MESSAGE" =>$res->fetchAll(\PDO::FETCH_ASSOC)];
 
             } catch (\PDOException $error) {
                 $this->message = $error->getMessage();

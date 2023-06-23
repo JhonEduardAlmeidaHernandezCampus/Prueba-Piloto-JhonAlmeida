@@ -1,14 +1,16 @@
 <?php
+namespace App;
+
     abstract class credentials{
-        /* protected $host = '172.16.48.204';
+        protected $host = '172.16.49.20';
         private $user = 'sputnik';
         private $password = 'Sp3tn1kC@';
-        protected $dbname = 'campusland'; */ 
+        protected $dbname = 'campusland'; 
 
-        protected $host = 'localhost';
+        /* protected $host = 'localhost';
         private $user = 'root';
         private $password = '';
-        protected $dbname = 'campusland';
+        protected $dbname = 'campusland'; */
 
         public function __get($name){
             return $this->{$name};

@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class marketing_area extends connect{
         use getInstance;
         private $message;

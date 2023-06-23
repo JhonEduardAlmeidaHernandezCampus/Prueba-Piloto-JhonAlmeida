@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class regions extends connect{
         use getInstance;
         private $message;
@@ -29,13 +30,13 @@
             try {
                 $res = $this->connec->prepare($this->queryGetRegion);
                 $res->execute();
-                $this->message = ["STATUS" => 200, "MESSAGE" => $res->fetchAll(PDO::FETCH_ASSOC)];
+                $this->message = ["STATUS" => 200, "MESSAGE" => $res->fetchAll(\PDO::FETCH_ASSOC)];
 
             } catch (\PDOException $error) {
                 $this->message = $error->getMessage();
 
             } finally {
-                print_r($this->message);
+                echo json_encode($this->message, JSON_PRETTY_PRINT);
             }
         }
 

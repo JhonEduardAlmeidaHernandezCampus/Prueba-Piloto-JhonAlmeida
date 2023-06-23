@@ -1,0 +1,22 @@
+{
+    "name": "leonr/prueba-piloto-jhon-almeida",
+    "description": "...",
+    "license": "LTS",
+    "autoload": {
+        "psr-4": {
+            "App\\":[
+                "./script/",
+                "./script/db/"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Jhon Hernandez",
+            "email": "jhonhernandez.campus@gmail.com"
+        }
+    ],
+    "require": {
+        "bramus/router": "~1.6"
+    }
+}

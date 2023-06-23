@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class themes extends connect{
         use getInstance;
         private $message;

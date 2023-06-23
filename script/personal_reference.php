@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class personal_reference extends connect{
         use getInstance;
         private $message;

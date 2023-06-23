@@ -1,4 +1,5 @@
 <?php
+namespace App;
     interface firma{
         public function __get($name);
     }
@@ -8,8 +9,8 @@
         protected $connec;
         function __construct(public $driver = "mysql", private $port = 3306){
             try {
-                $this->connec = new PDO($this->driver.":host=".$this->__get('host').";dbname=".$this->__get('dbname').";port=".$this->port.";user=".$this->user.";password=".$this->password.";");
-                $this->connec->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //!conexión PDO
+                $this->connec = new \PDO($this->driver.":host=".$this->__get('host').";dbname=".$this->__get('dbname').";port=".$this->port.";user=".$this->user.";password=".$this->password.";");
+                $this->connec->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION); //!conexión PDO
 
             } catch (\PDOExcetion $error) {
                 $this->connec = $error->getMessage();

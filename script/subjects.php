@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class subjects extends connect{
         use getInstance;
         private $message;

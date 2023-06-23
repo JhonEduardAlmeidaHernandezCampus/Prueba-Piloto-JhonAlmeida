@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class topics extends connect{
         use getInstance;
         private $message;

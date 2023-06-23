@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class areas extends connect{
         use getInstance;
         private $message;

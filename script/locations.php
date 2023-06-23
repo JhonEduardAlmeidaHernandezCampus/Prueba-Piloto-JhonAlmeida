@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class locations extends connect{
         use getInstance;
         private $message;

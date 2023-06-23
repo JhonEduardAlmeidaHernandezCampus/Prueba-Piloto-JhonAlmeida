@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class contact_info extends connect{
         use getInstance;
         private $message;

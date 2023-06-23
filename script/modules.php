@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class modules extends connect{
         use getInstance;
         private $message;

@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class working_info extends connect{
         use getInstance;
         private $message;

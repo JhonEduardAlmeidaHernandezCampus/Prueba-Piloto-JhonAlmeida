@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class cities extends connect{
         use getInstance;
         private $message;

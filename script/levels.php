@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class levels extends connect{
         use getInstance;
         private $message;

@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class country extends connect{
         use getInstance;
         private $message;

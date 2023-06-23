@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class admin_area extends connect{
         use getInstance;
         private $message;

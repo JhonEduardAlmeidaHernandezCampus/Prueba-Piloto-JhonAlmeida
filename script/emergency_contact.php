@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class emergency_contact extends connect{
         use getInstance;
         private $message;

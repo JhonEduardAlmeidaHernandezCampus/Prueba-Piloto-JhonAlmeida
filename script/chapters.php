@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class chapters extends connect{
         use getInstance;
         private $message;

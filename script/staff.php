@@ -1,5 +1,5 @@
 <?php
-
+namespace App;
 class staff extends connect{
     use getInstance;
     private $queryPostStaff = 'INSERT INTO staff (doc, first_name, second_name, first_surname, second_surname, eps, id_area, id_city) VALUES (:doc, :first_name, :second_name, :first_surname, :second_surname, :eps, :id_area, :id_city)';
@@ -34,13 +34,13 @@ class staff extends connect{
         try {
             $res = $this->connec->prepare($this->queryGetStaff);
             $res->execute();
-            $this->message = ["STATUS" => 200, "MESSAGE" => $res->fetchAll(PDO::FETCH_ASSOC)];
+            $this->message = ["STATUS" => 200, "MESSAGE" => $res->fetchAll(\PDO::FETCH_ASSOC)];
 
         } catch (\PDOException $error) {
             $this->message = $error->getMessage();
 
         } finally{
-            print_r($this->message);
+            echo json_encode($this->message, JSON_PRETTY_PRINT);
         }
     }
 

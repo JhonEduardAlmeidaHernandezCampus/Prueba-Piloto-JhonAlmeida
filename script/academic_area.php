@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class academic_area extends connect{
         use getInstance;
         private $message;

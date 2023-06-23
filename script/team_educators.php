@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class team_educators extends connect{
         use getInstance;
         private $message;

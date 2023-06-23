@@ -1,4 +1,5 @@
 <?php
+namespace App;
     class routes extends connect{
         use getInstance;
         private $message;
