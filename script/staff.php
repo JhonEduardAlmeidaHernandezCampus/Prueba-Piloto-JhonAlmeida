@@ -26,7 +26,7 @@ class staff extends connect{
         } catch (\PDOException $error) {
            $this->message = $error->getMessage();
         } finally{
-           print_r($this->message);
+           echo json_encode($this->message, JSON_PRETTY_PRINT);
         }
     }
 
@@ -63,7 +63,7 @@ class staff extends connect{
             $this->message = $error->getMessage();
 
         } finally{
-            print_r($this->message);
+            echo json_encode($this->message, JSON_PRETTY_PRINT);
         }
     }
 
@@ -78,7 +78,7 @@ class staff extends connect{
             $this->message = $error->getMessage();
 
         } finally{
-            print_r($this->message);
+            echo json_encode($this->message, JSON_PRETTY_PRINT);
         }
     }  
 }

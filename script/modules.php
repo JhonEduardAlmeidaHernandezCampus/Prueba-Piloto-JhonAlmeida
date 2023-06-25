@@ -26,7 +26,7 @@ namespace App;
             $this->message = $error->getMessage();
 
             } finally {
-            print_r($this->message);
+                echo json_encode($this->message, JSON_PRETTY_PRINT);
             }
         }
 
@@ -40,7 +40,7 @@ namespace App;
                 $this->message = $error->getMessage();
 
             } finally {
-                print_r($this->message);
+                echo json_encode($this->message, JSON_PRETTY_PRINT);
             }
         }
 
@@ -61,7 +61,7 @@ namespace App;
                 $this->message = $error->getMessage();
 
             } finally{
-                print_r($this->message);
+                echo json_encode($this->message, JSON_PRETTY_PRINT);
             }
         }
 
@@ -76,7 +76,7 @@ namespace App;
                 $this->message = $error->getMessage();
 
             } finally{
-                print_r($this->message);
+                echo json_encode($this->message, JSON_PRETTY_PRINT);
             }
         }
     }

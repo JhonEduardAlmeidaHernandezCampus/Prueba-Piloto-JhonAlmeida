@@ -1,21 +1,21 @@
 <?php
 namespace App;
-    class teachers extends connect{
+    class psychologist extends connect{
         use getInstance;
         private $message;
-        private $queryPostTeachers = 'INSERT INTO teachers (id_staff, id_route, id_academic_area, id_position, id_team_educator) VALUES (:id_staff, :id_route, :id_academic_area, :id_position, :id_team_educator)';
-        private $queryGetTeachers = 'SELECT * FROM teachers';
-        private $queryUpdateTeachers = 'UPDATE teachers SET id_staff = :id_staff, id_route = :id_route, id_academic_area = :id_academic_area, id_position = :id_position, id_team_educator = :id_team_educator WHERE id = :id_teachers';
-        private $queryDeleteTeachers = 'DELETE FROM teachers WHERE id = :id_teachers';
+        private $queryPostPsychologist = 'INSERT INTO psychologist (id_staff, id_route, id_academic_area_psycologist, id_position, id_team_educator) VALUES (:id_staff, :id_route, :id_academic_area_psycologist, :id_position, :id_team_educator)';
+        private $queryGetPsychologist = 'SELECT * FROM psychologist';
+        private $queryUpdatePsychologist = 'UPDATE psychologist SET id_staff = :id_staff, id_route = :id_route, id_academic_area_psycologist = :id_academic_area_psycologist, id_position = :id_position, id_team_educator = :id_team_educator WHERE id = :id_psychologist';
+        private $queryDeletePsychologist = 'DELETE FROM psychologist WHERE id = :id_psychologist';
 
         public function __construct(){parent::__construct();}
 
-        public function postTeachers($id_staff, $id_route, $id_academic_area, $id_position, $id_team_educator){
+        public function postPsychologist($id_staff, $id_route, $id_academic_area_psycologist, $id_position, $id_team_educator){
             try {
-                $res = $this->connec->prepare($this->queryPostTeachers);
+                $res = $this->connec->prepare($this->queryPostPsychologist);
                 $res->bindValue("id_staff", $id_staff);
                 $res->bindValue("id_route", $id_route);
-                $res->bindValue("id_academic_area", $id_academic_area);
+                $res->bindValue("id_academic_area_psycologist", $id_academic_area_psycologist);
                 $res->bindValue("id_position", $id_position);
                 $res->bindValue("id_team_educator", $id_team_educator);
                 $res->execute();
@@ -29,9 +29,9 @@ namespace App;
             }
         }
 
-        public function getTeachers(){
+        public function getPsychologist(){
             try {
-                $res = $this->connec->prepare($this->queryGetTeachers);
+                $res = $this->connec->prepare($this->queryGetPsychologist);
                 $res->execute();
                 $this->message = ["STATUS" => 200, "MESSAGE" =>$res->fetchAll(\PDO::FETCH_ASSOC)];
 
@@ -43,15 +43,15 @@ namespace App;
             }
         }
 
-        public function updateTeachers($id_staff, $id_route, $id_academic_area, $id_position, $id_team_educator, $id_teachers){
+        public function updatePsychologist($id_staff, $id_route, $id_academic_area_psycologist, $id_position, $id_team_educator, $id_psychologist){
             try {
-                $res = $this->connec->prepare($this->queryUpdateTeachers);
+                $res = $this->connec->prepare($this->queryUpdatePsychologist);
                 $res->bindValue("id_staff", $id_staff);
                 $res->bindValue("id_route", $id_route);
-                $res->bindValue("id_academic_area", $id_academic_area);
+                $res->bindValue("id_academic_area_psycologist", $id_academic_area_psycologist);
                 $res->bindValue("id_position", $id_position);
                 $res->bindValue("id_team_educator", $id_team_educator);
-                $res->bindValue("id_teachers", $id_teachers);
+                $res->bindValue("id_psychologist", $id_psychologist);
                 $res->execute();
                 $this->message = ["STATUS" => 200, "MESSAGE" => "Actualizado Exitosamente"];
 
@@ -63,10 +63,10 @@ namespace App;
             }
         }
 
-        public function deleteTeachers($id_teachers){
+        public function deletePsychologist($id_psychologist){
             try {
-                $res = $this->connec->prepare($this->queryDeleteTeachers);
-                $res->bindValue("id_teachers", $id_teachers);
+                $res = $this->connec->prepare($this->queryDeletePsychologist);
+                $res->bindValue("id_psychologist", $id_psychologist);
                 $res->execute();
                 $this->message = ["STATUS" => 200, "MESSAGE" => "Eliminado Exitosamente"];
 
