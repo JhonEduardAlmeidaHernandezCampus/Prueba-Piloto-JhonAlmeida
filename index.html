@@ -5,60 +5,106 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/estilos.css">
 	<script src="js/main.js" async></script>
 	<script src="js/app.js" defer type="module"></script>
+	<script src="js/showForms.js" defer></script>
+	<script src="js/forms.js" defer type="module"></script>
 	<title>AdminSite</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="#" class="brand"><i class='bx bxs-smile icon'></i>ADMIN</a>
+		<h1 href="#" class="brand"><i class='bx bxs-smile icon'></i>ADMIN</h1>
 		<ul class="side-menu">
 			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i>JHON</a></li>
 			<li class="divider" data-text="Forms">Forms</li>
 			<li>
-				<a href="#"><i class='bx bxs-inbox icon' ></i> GENERAL AREAS <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bxs-inbox icon'></i> GENERAL AREAS <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#">Areas</a></li>
-					<li><a href="#">Academic Area</a></li>
-					<li><a href="#">Admin Area</a></li>
-					<li><a href="#">Design Area</a></li>
-					<li><a href="#">Maint Area</a></li>
-					<li><a href="#">Marketing Area</a></li>
+					<li><a href="#" id="areas">Areas</a></li>
+					<li><a href="#" id="position">Positions</a></li>
+					<li><a href="#" id="academic_area">Academic Area</a></li>
+					<li><a href="#" id="admin_area">Admin Area</a></li>
+					<li><a href="#" id="design_area">Design Area</a></li>
+					<li><a href="#" id="maint_area">Maint Area</a></li>
+					<li><a href="#" id="marketing_area">Marketing Area</a></li>
 				</ul>
 			</li>
 			<li>
-				<a href="#"><i class='bx bxs-inbox icon' ></i> ROLES <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bxs-inbox icon'></i> ROLES <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#">Trainers</a></li>
-					<li><a href="#">Teachers</a></li>
-					<li><a href="#">Tutors</a></li>
-					<li><a href="#">Campers</a></li>
-					<li><a href="#">Psychologist</a></li>
-					<li><a href="#">Staff</a></li>
+					<li><a href="#" id="levels">Levels</a></li>
+					<li><a href="#" id="trainers">Trainers</a></li>
+					<li><a href="#" id="teachers">Teachers</a></li>
+					<li><a href="#" id="tutors">Tutors</a></li>
+					<li><a href="#" id="campers">Campers</a></li>
+					<li><a href="#" id="psychologist">Psychologist</a></li>
+					<li><a href="#" id="staff">Staff</a></li>
 				</ul>
 			</li>
 			<li>
-				<a href="#"><i class='bx bxs-inbox icon' ></i> LOCALITY <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bxs-inbox icon'></i> LOCALITY <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#">Locations</a></li>
-					<li><a href="#">Countries</a></li>
-					<li><a href="#">Regions</a></li>
-					<li><a href="#">Cities</a></li>
+					<li><a href="#" id="locations">Locations</a></li>
+					<li><a href="#" id="countries">Countries</a></li>
+					<li><a href="#" id="regions">Regions</a></li>
+					<li><a href="#" id="cities">Cities</a></li>
 				</ul>
 			</li>
 			<li>
-				<a href="#"><i class='bx bxs-inbox icon' ></i> LOCALITY <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bxs-inbox icon'></i> REFERENCES <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#">Locations</a></li>
-					<li><a href="#">Countries</a></li>
-					<li><a href="#">Regions</a></li>
-					<li><a href="#">Cities</a></li>
+					<li><a href="#" id="contact_info">Contact Info</a></li>
+					<li><a href="#" id="emergency_contact">Emergency Contact</a></li>
+					<li><a href="#" id="working_info">Working Info</a></li>
+					<li><a href="#" id="personal_ref">Personal Reference</a></li>
+					<li><a href="#" id="work_reference">Work Reference</a></li>
 				</ul>
 			</li>
-			<li><a href="#"><i class='bx bxs-chart icon' ></i> Charts</a></li>
-			<li><a href="#"><i class='bx bxs-widget icon' ></i> Widgets</a></li>
-			
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon'></i> SKILLS <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#" id="soft_skills">Soft Skills</a></li>
+					<li><a href="#" id="software_skills">Software Skills</a></li>
+					<li><a href="#" id="english_skills">English Skills</a></li>
+					<li><a href="#" id="review_skills">Review Skills</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon'></i> THEMES <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#" id="subjects">Subjects</a></li>
+					<li><a href="#" id="themes">Themes</a></li>
+					<li><a href="#" id="thematic_units">Thematics Units</a></li>
+					<li><a href="#" id="topics">Topics</a></li>
+					<li><a href="#" id="optional_topics">Optionals Topics</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon'></i> TEAMS <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#" id="team_educators">Teams Educators</a></li>
+					<li><a href="#" id="team_schedule">Teams Schedules</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon'></i> CHAPTERS <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#" id="chapters">Chapter</a></li>
+					<li><a href="#" id="modules">Modules</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon'></i> ROUTES <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#" id="journey">Journey</a></li>
+					<li><a href="#" id="routes">Route</a></li>
+				</ul>
+			</li>			
 		</ul>
 	</section>
 	<!-- SIDEBAR -->
@@ -138,10 +184,1028 @@
 					<span class="label">80%</span>
 				</div>
 			</div>
-			
 		</main>
 		<!-- MAIN -->
+
+		<!-- <div style="display: none;"></div> -->
+
+		<main id="areasContent" style="display: none;">
+			<h3>AREA</h3>
+			<form class="row contenedorForm">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">Name Area</label>
+				  <input type="text" class="form-control" name="name_area" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="positionsContent" style="display: none;">
+			<h3>POSITIONS</h3>
+			<form class="row contenedorForm">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">Name Position</label>
+				  <input type="text" class="form-control" name="name_position" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Arl</label>
+					<input type="text" class="form-control" name="arl" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="academicAreaContent" style="display: none;">
+			<h3>ACADEMIC AREA</h3>
+			<form class="row contenedorForm">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">ID Area</label>
+				  <input type="number" class="form-control" name="id_area" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Staff</label>
+					<input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Position</label>
+					<input type="number" class="form-control" name="id_position" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Journeys</label>
+					<input type="number" class="form-control" name="id_journeys" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="adminAreaContent" style="display: none;">
+			<h3>ADMIN AREA</h3>
+			<form class="row contenedorForm">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">ID Area</label>
+				  <input type="number" class="form-control" name="id_area" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Staff</label>
+					<input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Position</label>
+					<input type="number" class="form-control" name="id_position" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Journey</label>
+					<input type="number" class="form-control" name="id_journey" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="desingAreaContent" style="display: none;">
+			<h3>DESIGN AREA</h3>
+			<form class="row contenedorForm">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">ID Area</label>
+				  <input type="number" class="form-control" name="id_area" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Staff</label>
+					<input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Position</label>
+					<input type="number" class="form-control" name="id_position" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Journey</label>
+					<input type="number" class="form-control" name="id_journey" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="maintAreaContent" style="display: none;">
+			<h3>MAINT AREA</h3>
+			<form class="row contenedorForm">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">ID Area</label>
+				  <input type="number" class="form-control" name="id_area" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Staff</label>
+					<input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Position</label>
+					<input type="number" class="form-control" name="id_position" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Journey</label>
+					<input type="number" class="form-control" name="id_journey" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="marketingAreaContent" style="display: none;">
+			<h3>MARKETING AREA</h3>
+			<form class="row contenedorForm">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">ID Area</label>
+				  <input type="number" class="form-control" name="id_area" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Staff</label>
+					<input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Position</label>
+					<input type="number" class="form-control" name="id_position" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Journey</label>
+					<input type="number" class="form-control" name="id_journey" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="levelsContent" style="display: none;">
+			<h3>LEVELS</h3>
+			<form class="row contenedorForm">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">Name Level</label>
+				  <input type="text" class="form-control" name="name_level" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Group Level</label>
+					<input type="text" class="form-control" name="group_level" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="trainersContent" style="display: none;">
+			<h3>TRAINERS</h3>
+			<form class="row contenedorForm">
+				<div class="col-2">
+				  <label for="inputEmail4" class="form-label">ID Staff</label>
+				  <input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Level</label>
+					<input type="number" class="form-control" name="id_level" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Route</label>
+					<input type="number" class="form-control" name="id_route" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Academic Area</label>
+					<input type="number" class="form-control" name="id_academic_area" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Position</label>
+					<input type="number" class="form-control" name="id_position" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Team Educator</label>
+					<input type="number" class="form-control" name="id_team_educator" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="teachersContent" style="display: none;">
+			<h3>TEACHERS</h3>
+			<form class="row contenedorForm">
+				<div class="col-2">
+				  <label for="inputEmail4" class="form-label">ID Staff</label>
+				  <input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Route</label>
+					<input type="number" class="form-control" name="id_route" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Academic Area</label>
+					<input type="number" class="form-control" name="id_academic_area" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Position</label>
+					<input type="number" class="form-control" name="id_position" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Team Educator</label>
+					<input type="number" class="form-control" name="id_team_educator" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="tutorsContent" style="display: none;">
+			<h3>TUTORS</h3>
+			<form class="row contenedorForm">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">ID Staff</label>
+				  <input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Academic Area</label>
+					<input type="number" class="form-control" name="id_academic_area" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Position</label>
+					<input type="number" class="form-control" name="id_position" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="campersContent" style="display: none;">
+			<h3>CAMPERS</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">ID Team Schedule</label>
+				  <input type="number" class="form-control" name="id_team_schedule" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Route</label>
+					<input type="number" class="form-control" name="id_route" required>
+				  </div>
+				  <div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Trainer</label>
+					<input type="number" class="form-control" name="id_trainer" required>
+				  </div>
+				  <div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Psychologist</label>
+					<input type="number" class="form-control" name="id_psycologist" required>
+				  </div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Teacher</label>
+					<input type="number" class="form-control" name="id_teacher" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Level</label>
+					<input type="number" class="form-control" name="id_level" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Journey</label>
+					<input type="number" class="form-control" name="id_journey" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Staff</label>
+					<input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="psychologistContent" style="display: none;">
+			<h3>PSYCHOLOGIST</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-2">
+				  <label for="inputEmail4" class="form-label">ID Staff</label>
+				  <input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Route</label>
+					<input type="number" class="form-control" name="id_route" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Academic Area Psychologist</label>
+					<input type="number" class="form-control" name="id_academic_area_psycologist" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Position</label>
+					<input type="number" class="form-control" name="id_position" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Team Educator</label>
+					<input type="number" class="form-control" name="id_team_educator" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="staffContent" style="display: none;">
+			<h3>STAFF</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">Doc</label>
+				  <input type="text" class="form-control" name="doc" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">First Name</label>
+					<input type="text" class="form-control" name="first_name" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Second Name</label>
+					<input type="text" class="form-control" name="second_name" required>
+				</div>
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">First Surname</label>
+				  <input type="text" class="form-control" name="first_surname" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Second Surname</label>
+					<input type="text" class="form-control" name="second_surname" required>
+				  </div>
+				  <div class="col-3">
+					<label for="inputEmail4" class="form-label">Eps</label>
+					<input type="text" class="form-control" name="eps" required>
+				  </div>
+				  <div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Area</label>
+					<input type="number" class="form-control" name="id_area" required>
+				  </div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID City</label>
+					<input type="number" class="form-control" name="id_city" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="locationsContent">
+			<h3>LOCATIONS</h3>
+			<ul class="breadcrumbs">
+				<li><a href="#" id="addDataLocations">Add</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" id="showDataLocations">Show Data</a></li>
+			</ul>
+			<form class="row contenedorForm g-3" id="formLocations">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">Name Location</label>
+				  <input type="text" class="form-control" name="name_location" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+			<div id="show"></div>
+		</main>
+
+		<main id="countriesContent" style="display: none;">
+			<h3>COUNTRIES</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">Name Country</label>
+				  <input type="text" class="form-control" name="name_country" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="regionsContent" style="display: none;">
+			<h3>REGIONS</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">Name Region</label>
+				  <input type="text" class="form-control" name="name_region" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Country</label>
+					<input type="number" class="form-control" name="id_country" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="citiesContent" style="display: none;">
+			<h3>CITIES</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+				  <label for="inputEmail4" class="form-label">Name City</label>
+				  <input type="text" class="form-control" name="name_city" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Region</label>
+					<input type="number" class="form-control" name="id_region" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="contactInfoContent" style="display: none;">
+			<h3>CONTACT INFO</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-2">
+				  <label for="inputEmail4" class="form-label">ID Staff</label>
+				  <input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Whatsapp</label>
+					<input type="text" class="form-control" name="whatsapp" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Instagram</label>
+					<input type="text" class="form-control" name="instagram" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Linkedin</label>
+					<input type="text" class="form-control" name="linkedin" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Email</label>
+					<input type="email" class="form-control" name="email" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Address</label>
+					<input type="text" class="form-control" name="address" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Cellphone</label>
+					<input type="text" class="form-control" name="cel_number" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+		
+		<main id="emergencyContactContent" style="display: none;">
+			<h3>EMERGENCY CONTACT</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-2">
+				  <label for="inputEmail4" class="form-label">ID Staff</label>
+				  <input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Cellphone</label>
+					<input type="text" class="form-control" name="cel_number" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Relationship</label>
+					<input type="text" class="form-control" name="relationship" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Full Name</label>
+					<input type="text" class="form-control" name="full_name" required>
+				</div>
+				<div class="col-4">
+					<label for="inputEmail4" class="form-label">Email</label>
+					<input type="email" class="form-control" name="email" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="workingInfoContent" style="display: none;">
+			<h3>WORKING INFO</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-2">
+				  <label for="inputEmail4" class="form-label">ID Staff</label>
+				  <input type="number" class="form-control" name="id_staff" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">Years Experience</label>
+					<input type="number" class="form-control" name="years_exp" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">Months Experience</label>
+					<input type="number" class="form-control" name="months_exp" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Work Reference</label>
+					<input type="number" class="form-control" name="id_work_reference" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Personal Reference</label>
+					<input type="number" class="form-control" name="id_personal_ref" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Start Contract</label>
+					<input type="date" class="form-control" name="start_contract" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">End Contract</label>
+					<input type="date" class="form-control" name="end_contract" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="personalReferenceContent" style="display: none;">
+			<h3>PERSONAL REFERENCE</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Full Name</label>
+					<input type="text" class="form-control" name="full_name" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Cellphone</label>
+					<input type="text" class="form-control" name="cel_number" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Relationship</label>
+					<input type="text" class="form-control" name="relationship" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Occupation</label>
+					<input type="text" class="form-control" name="occupation" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="workReferenceContent" style="display: none;">
+			<h3>WORK REFERENCE</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Full Name</label>
+					<input type="text" class="form-control" name="full_name" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Cellphone</label>
+					<input type="text" class="form-control" name="cel_number" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Position</label>
+					<input type="text" class="form-control" name="position" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Company</label>
+					<input type="text" class="form-control" name="company" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="softSkillsContent" style="display: none;">
+			<h3>SOFT SKILLS</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Team Schedule</label>
+					<input type="number" class="form-control" name="id_team_schedule" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Journey</label>
+					<input type="number" class="form-control" name="id_journey" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Psychologist</label>
+					<input type="number" class="form-control" name="id_psychologist" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Location</label>
+					<input type="number" class="form-control" name="id_location" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Subjects</label>
+					<input type="number" class="form-control" name="id_subject" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="softwareSkillsContent" style="display: none;">
+			<h3>SOFTWARE SKILLS</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Team Schedule</label>
+					<input type="number" class="form-control" name="id_team_schedule" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Journey</label>
+					<input type="number" class="form-control" name="id_journey" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Trainer</label>
+					<input type="number" class="form-control" name="id_trainer" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Location</label>
+					<input type="number" class="form-control" name="id_location" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Subjects</label>
+					<input type="number" class="form-control" name="id_subject" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="englishSkillsContent" style="display: none;">
+			<h3>ENGLISH SKILLS</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Team Schedule</label>
+					<input type="number" class="form-control" name="id_team_schedule" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Journey</label>
+					<input type="number" class="form-control" name="id_journey" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Teacher</label>
+					<input type="number" class="form-control" name="id_teacher" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Location</label>
+					<input type="number" class="form-control" name="id_location" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Subjects</label>
+					<input type="number" class="form-control" name="id_subject" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="reviewSkillsContent" style="display: none;">
+			<h3>REVIEW SKILLS</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Team Schedule</label>
+					<input type="number" class="form-control" name="id_team_schedule" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Journey</label>
+					<input type="number" class="form-control" name="id_journey" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Tutor</label>
+					<input type="number" class="form-control" name="id_tutor" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Location</label>
+					<input type="number" class="form-control" name="id_location" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="subjectContent" style="display: none;">
+			<h3>SUBJECTS</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Name Subject</label>
+					<input type="text" class="form-control" name="name_subject" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="themesContent" style="display: none;">
+			<h3>THEMES</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Chapter</label>
+					<input type="number" class="form-control" name="id_chapter" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Name Theme</label>
+					<input type="text" class="form-control" name="name_theme" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Start Date</label>
+					<input type="date" class="form-control" name="start_date" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">End Date</label>
+					<input type="date" class="form-control" name="end_date" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Description</label>
+					<input type="text" class="form-control" name="description" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">Duration Days</label>
+					<input type="number" class="form-control" name="duration_days" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="thematicUnitsContent" style="display: none;">
+			<h3>THEMATICS UNITS</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Route</label>
+					<input type="number" class="form-control" name="id_route" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Name Thematics Units</label>
+					<input type="text" class="form-control" name="name_thematics_units" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Start Date</label>
+					<input type="date" class="form-control" name="start_date" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">End Date</label>
+					<input type="date" class="form-control" name="end_date" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Description</label>
+					<input type="text" class="form-control" name="description" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">Duration Days</label>
+					<input type="number" class="form-control" name="duration_days" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="topicsContent" style="display: none;">
+			<h3>TOPICS</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Module</label>
+					<input type="number" class="form-control" name="id_module" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Name Topic</label>
+					<input type="text" class="form-control" name="name_topic" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Start Date</label>
+					<input type="date" class="form-control" name="start_date" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">End Date</label>
+					<input type="date" class="form-control" name="end_date" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Description</label>
+					<input type="text" class="form-control" name="description" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">Duration Days</label>
+					<input type="number" class="form-control" name="duration_days" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="optionalTopicsContent" style="display: none;">
+			<h3>OPTIONAL TOPICS</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Topic</label>
+					<input type="number" class="form-control" name="id_topic" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Team</label>
+					<input type="number" class="form-control" name="id_team" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Subject</label>
+					<input type="number" class="form-control" name="id_subject" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Camper</label>
+					<input type="number" class="form-control" name="id_camper" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Team Educator</label>
+					<input type="number" class="form-control" name="id_team_educator" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="teamEducatorsContent" style="display: none;">
+			<h3>TEAM EDUCATORS</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Name Rol</label>
+					<input type="text" class="form-control" name="name_rol" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="teamScheduleContent" style="display: none;">
+			<h3>TEAM SCHEDULE</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-8">
+					<label for="inputEmail4" class="form-label">Team Name</label>
+					<input type="text" class="form-control" name="team_name" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Check In Skills</label>
+					<input type="time" class="form-control" name="check_in_skills" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Check Out Skills</label>
+					<input type="time" class="form-control" name="check_out_skills" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Check In Soft</label>
+					<input type="time" class="form-control" name="check_in_soft" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Check Out Soft</label>
+					<input type="time" class="form-control" name="check_out_soft" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Check In English</label>
+					<input type="time" class="form-control" name="check_in_english" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Check Out English</label>
+					<input type="time" class="form-control" name="check_out_english" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Check In Review</label>
+					<input type="time" class="form-control" name="check_in_review" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Check Out Review</label>
+					<input type="time" class="form-control" name="check_out_review" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">ID Journey</label>
+					<input type="number" class="form-control" name="id_journey" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="chaptersContent" style="display: none;">
+			<h3>CHAPTER</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Thematic Units</label>
+					<input type="number" class="form-control" name="id_thematic_units" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Name Chapter</label>
+					<input type="text" class="form-control" name="name_chapter" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Start Date</label>
+					<input type="date" class="form-control" name="start_date" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">End Date</label>
+					<input type="date" class="form-control" name="end_date" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Description</label>
+					<input type="text" class="form-control" name="description" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">Duration Days</label>
+					<input type="number" class="form-control" name="duration_days" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="modulesContent" style="display: none;">
+			<h3>MODULES</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Name Module</label>
+					<input type="text" class="form-control" name="name_module" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Start Date</label>
+					<input type="date" class="form-control" name="start_date" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">End Date</label>
+					<input type="date" class="form-control" name="end_date" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Description</label>
+					<input type="text" class="form-control" name="description" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">Duration Days</label>
+					<input type="number" class="form-control" name="duration_days" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">ID Theme</label>
+					<input type="number" class="form-control" name="id_theme" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="journeyContent" style="display: none;">
+			<h3>JOURNEY</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Name Joruney</label>
+					<input type="text" class="form-control" name="name_journey" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Check In</label>
+					<input type="time" class="form-control" name="check_in" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Check Out</label>
+					<input type="time" class="form-control" name="check_out" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
+
+		<main id="routeContent" style="display: none;">
+			<h3>ROUTE</h3>
+			<form class="row contenedorForm g-3">
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Name Route</label>
+					<input type="text" class="form-control" name="name_route" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">Start Date</label>
+					<input type="date" class="form-control" name="start_date" required>
+				</div>
+				<div class="col-3">
+					<label for="inputEmail4" class="form-label">End Date</label>
+					<input type="date" class="form-control" name="end_date" required>
+				</div>
+				<div class="col-5">
+					<label for="inputEmail4" class="form-label">Description</label>
+					<input type="text" class="form-control" name="description" required>
+				</div>
+				<div class="col-2">
+					<label for="inputEmail4" class="form-label">Duration Month</label>
+					<input type="number" class="form-control" name="duration_month" required>
+				</div>
+				<div class="col-12 mt-3">
+				  <button type="submit" class="btn">Save</button>
+				</div>
+			</form>
+		</main>
 	</section>
 	<!-- NAVBAR -->
+
 </body>
 </html>

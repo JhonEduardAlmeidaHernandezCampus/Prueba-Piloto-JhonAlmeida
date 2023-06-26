@@ -1,0 +1,74 @@
+* ul li a{
+    text-decoration: none;
+}
+
+.contenedorForm{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorForm div{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    border: 1px solid black !important;
+    background: none !important;
+    color: blue !important;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+
+#show{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.showTable .id{
+    text-align: center;
+    padding: 2px;
+    border: 1px solid blue;
+    width: 100px;
+}
+
+.showTable .location{
+    text-align: center;
+    padding: 2px;
+    border: 1px solid red;
+    width: 180px;
+}
+
+.tableBody td{
+    padding: 2px;
+    text-align: center;
+    border: 1px solid rgb(9, 255, 0);
+}
+
+.tableBody .btnSelectModi{
+    padding: 5px;
+    width: 20%;
+    text-align: center;
+    background-color: rgb(238, 255, 0);
+    border: none;
+}
+
+.tableBody .btnSelectDel{
+    padding: 5px;
+    width: 20%;
+    text-align: center;
+    background-color: red;
+    border: none;
+}
