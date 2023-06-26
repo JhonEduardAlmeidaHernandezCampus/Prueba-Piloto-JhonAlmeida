@@ -14,7 +14,7 @@ export default{
                 header: {"Content-Type": "application/json"}
             }
 
-            let peticion = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getLocations", config)).json();
+            let peticion = await (await fetch("http://localhost/SpUkM01-094/Prueba-Piloto-JhonAlmeida/uploads/getLocations", config)).json();
 
             let plantilla = `
                             <div class="cont">
@@ -63,7 +63,7 @@ export default{
                 body: JSON.stringify(data)
             }
 
-            let peticion = await (await fetch ("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/postLocations", config)).text()
+            let peticion = await (await fetch ("http://localhost/SpUkM01-094/Prueba-Piloto-JhonAlmeida/uploads/postLocations", config)).text()
             alert("Agregado Exitosamente");
             formLocations.reset();
         })
@@ -82,7 +82,7 @@ export default{
                     header: {"Content-Type":"application/json"},
                 }
     
-                let peticion = await (await fetch (`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/deleteLocations/${data}`, config)).text()
+                let peticion = await (await fetch (`http://localhost/SpUkM01-094/Prueba-Piloto-JhonAlmeida/uploads/deleteLocations/${data}`, config)).text()
                 alert(peticion);
                 window.location.reload();
             })
