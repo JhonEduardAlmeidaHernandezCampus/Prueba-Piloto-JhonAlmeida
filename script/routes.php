@@ -4,7 +4,8 @@ namespace App;
         use getInstance;
         private $message;
         private $queryPostRoutes = 'INSERT INTO routes (name_route, start_date, end_date, description, duration_month) VALUES (:name_route, :start_date, :end_date, :description, :duration_month)';
-        private $queryGetRoutes = 'SELECT * FROM routes';
+        private $queryGetAllRoutes = 'SELECT * FROM routes';
+        private $queryGetRoutes = 'SELECT * FROM routes WHERE id = :id_routes';
         private $queryUpdateRoutes = 'UPDATE routes SET name_route = :name_route, start_date = :start_date, end_date = :end_date, description = :description, duration_month = :duration_month  WHERE id = :id_routes';
         private $queryDeleteRoutes = 'DELETE FROM routes WHERE id = :id_routes';
 
@@ -29,11 +30,11 @@ namespace App;
             }
         }
 
-        public function getRoutes(){
+        public function getAllRoutes(){
             try {
-                $res = $this->connec->prepare($this->queryGetRoutes);
+                $res = $this->connec->prepare($this->queryGetAllRoutes);
                 $res->execute();
-                $this->message = ["STATUS" => 200, "MESSAGE" =>$res->fetchAll(PDO::FETCH_ASSOC)];
+                $this->message = ["STATUS" => 200, "MESSAGE" =>$res->fetchAll(\PDO::FETCH_ASSOC)];
 
             } catch (\PDOException $error) {
                 $this->message = $error->getMessage();
@@ -43,7 +44,27 @@ namespace App;
             }
         }
 
-        public function updateRoutes($name_route, $start_date, $end_date, $description, $duration_month, $id_routes){
+        public function getRoutes($id_routes){
+            try {
+                $res = $this->connec->prepare($this->queryGetRoutes);
+                $res->bindValue("id_routes", $id_routes);
+                $res->execute();
+                $this->message = ["STATUS" => 200, "MESSAGE" =>$res->fetchAll(\PDO::FETCH_ASSOC)];
+
+            } catch (\PDOException $error) {
+                $this->message = $error->getMessage();
+
+            } finally {
+                echo json_encode($this->message, JSON_PRETTY_PRINT);
+            }
+        }
+
+        public function updateRoutes($data, $id_routes){
+            $name_route = $data["name_route"];
+            $start_date = $data["start_date"];
+            $end_date = $data["end_date"];
+            $description = $data["description"];
+            $duration_month = $data["duration_month"];
             try {
                 $res = $this->connec->prepare($this->queryUpdateRoutes);
                 $res->bindValue("name_route", $name_route);

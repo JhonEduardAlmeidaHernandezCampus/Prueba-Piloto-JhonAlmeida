@@ -10,7 +10,11 @@ namespace App;
         /* protected $host = 'localhost';
         private $user = 'root';
         private $password = '';
+<<<<<<< HEAD
+        protected $dbname = 'campusland'; 
+=======
     protected $dbname = 'campusland';  */
+>>>>>>> 3c6933ab89beee5ee1f612ef73e6cdef1b585091
 
         public function __get($name){
             return $this->{$name};

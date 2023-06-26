@@ -191,7 +191,12 @@
 
 		<main id="areasContent" style="display: none;">
 			<h3>AREA</h3>
-			<form class="row contenedorForm">
+			<ul class="breadcrumbs">
+				<li><a href="#" id="addDataArea">Add</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" id="showDataArea">Show Data</a></li>
+			</ul>
+			<form class="row contenedorForm" id="formArea">
 				<div class="col-3">
 				  <label for="inputEmail4" class="form-label">Name Area</label>
 				  <input type="text" class="form-control" name="name_area" required>
@@ -200,6 +205,7 @@
 				  <button type="submit" class="btn">Save</button>
 				</div>
 			</form>
+			<div class="showArea"></div>
 		</main>
 
 		<main id="positionsContent" style="display: none;">
@@ -555,7 +561,7 @@
 			</form>
 		</main>
 
-		<main id="locationsContent">
+		<main id="locationsContent" style="display: none;">
 			<h3>LOCATIONS</h3>
 			<ul class="breadcrumbs">
 				<li><a href="#" id="addDataLocations">Add</a></li>
@@ -571,7 +577,7 @@
 				  <button type="submit" class="btn">Save</button>
 				</div>
 			</form>
-			<div id="show"></div>
+			<div class="showLocations"></div>
 		</main>
 
 		<main id="countriesContent" style="display: none;">
@@ -888,7 +894,12 @@
 
 		<main id="subjectContent" style="display: none;">
 			<h3>SUBJECTS</h3>
-			<form class="row contenedorForm g-3">
+			<ul class="breadcrumbs">
+				<li><a href="#" id="addDataSubjects">Add</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" id="showDataSubjects">Show Data</a></li>
+			</ul>
+			<form class="row contenedorForm g-3" id="formSubjects">
 				<div class="col-3">
 					<label for="inputEmail4" class="form-label">Name Subject</label>
 					<input type="text" class="form-control" name="name_subject" required>
@@ -897,6 +908,7 @@
 				  <button type="submit" class="btn">Save</button>
 				</div>
 			</form>
+			<div class="showSubjects"></div>
 		</main>
 
 		<main id="themesContent" style="display: none;">
@@ -932,9 +944,14 @@
 			</form>
 		</main>
 
-		<main id="thematicUnitsContent" style="display: none;">
+		<main id="thematicUnitsContent">
 			<h3>THEMATICS UNITS</h3>
-			<form class="row contenedorForm g-3">
+			<ul class="breadcrumbs">
+				<li><a href="#" id="addDataTematicUnit">Add</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" id="showDataTematicUnit">Show Data</a></li>
+			</ul>
+			<form class="row contenedorForm g-3" id="formTematicUnit">
 				<div class="col-2">
 					<label for="inputEmail4" class="form-label">ID Route</label>
 					<input type="number" class="form-control" name="id_route" required>
@@ -963,6 +980,7 @@
 				  <button type="submit" class="btn">Save</button>
 				</div>
 			</form>
+			<div class="showTematicUnit"></div>
 		</main>
 
 		<main id="topicsContent" style="display: none;">
@@ -1178,7 +1196,12 @@
 
 		<main id="routeContent" style="display: none;">
 			<h3>ROUTE</h3>
-			<form class="row contenedorForm g-3">
+			<ul class="breadcrumbs">
+				<li><a href="#" id="addDataRoute">Add</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" id="showDataRoute">Show Data</a></li>
+			</ul>
+			<form class="row contenedorForm g-3" id="formRoute">
 				<div class="col-3">
 					<label for="inputEmail4" class="form-label">Name Route</label>
 					<input type="text" class="form-control" name="name_route" required>
@@ -1203,6 +1226,7 @@
 				  <button type="submit" class="btn">Save</button>
 				</div>
 			</form>
+			<div class="showRoute"></div>
 		</main>
 	</section>
 	<!-- NAVBAR -->

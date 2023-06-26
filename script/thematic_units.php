@@ -4,7 +4,8 @@ namespace App;
         use getInstance;
         private $message;
         private $queryPostThematicUnits = 'INSERT INTO thematic_units (id_route, name_thematics_units, start_date, end_date, description, duration_days) VALUES (:id_route, :name_thematics_units, :start_date, :end_date, :description, :duration_days)';
-        private $queryGetThematicUnits = 'SELECT * FROM thematic_units';
+        private $queryGetAllThematicUnits = 'SELECT * FROM thematic_units INNER JOIN routes ON thematic_units.id_route = routes.id';
+        private $queryGetThematicUnits = 'SELECT * FROM thematic_units WHERE id = :id_thematic_units';
         private $queryUpdateThematicUnits = 'UPDATE thematic_units SET id_route = :id_route, name_thematics_units = :name_thematics_units, start_date = :start_date, end_date = :end_date, description = :description, duration_days = :duration_days WHERE id = :id_thematic_units';
         private $queryDeleteThematicUnits = 'DELETE FROM thematic_units WHERE id = :id_thematic_units';
 
@@ -30,11 +31,11 @@ namespace App;
             }
         }
 
-        public function getThematicUnits(){
+        public function getAllThematicUnits(){
             try {
-                $res = $this->connec->prepare($this->queryGetThematicUnits);
+                $res = $this->connec->prepare($this->queryGetAllThematicUnits);
                 $res->execute();
-                $this->message = ["STATUS" => 200, "MESSAGE" =>$res->fetchAll(PDO::FETCH_ASSOC)];
+                $this->message = ["STATUS" => 200, "MESSAGE" =>$res->fetchAll(\PDO::FETCH_ASSOC)];
 
             } catch (\PDOException $error) {
                 $this->message = $error->getMessage();
@@ -44,7 +45,28 @@ namespace App;
             }
         }
 
-        public function updateThematicUnits($id_route, $name_thematics_units, $start_date, $end_date, $description, $duration_days, $id_thematic_units){
+        public function getThematicUnits(){
+            try {
+                $res = $this->connec->prepare($this->queryGetThematicUnits);
+                $res->execute();
+                $this->message = ["STATUS" => 200, "MESSAGE" =>$res->fetchAll(\PDO::FETCH_ASSOC)];
+
+            } catch (\PDOException $error) {
+                $this->message = $error->getMessage();
+
+            } finally {
+                echo json_encode($this->message, JSON_PRETTY_PRINT);
+            }
+        }
+
+        public function updateThematicUnits($data, $id_thematic_units){
+            $id_route = $data["id_route"];
+            $name_thematics_units = $data["name_thematics_units"];
+            $start_date = $data["start_date"];
+            $end_date = $data["end_date"];
+            $description = $data["description"];
+            $duration_days = $data["duration_days"];
+            
             try {
                 $res = $this->connec->prepare($this->queryUpdateThematicUnits);
                 $res->bindValue("id_route", $id_route);
