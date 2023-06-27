@@ -16,5 +16,6 @@ areas.saveFormAreas();
 routes.changeSectionsRoutes();
 routes.saveFormRoute();
 
-thematicUnit.changeSectionsTematicUnit();
-thematicUnit.saveFormTematicUnit();
+document.querySelector("#thematic_units").addEventListener("click", (e) =>{
+    thematicUnit.showFormThematicUnit();
+})
