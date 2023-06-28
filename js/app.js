@@ -17,6 +17,7 @@ import journey from "./components/journey.js";
 import regions from "./components/regions.js";
 import cities from "./components/cities.js";
 import emergency_contact from "./components/emergency_contact.js";
+import admin_area from "./components/admin_area.js";
 
 locations.changeSections();
 locations.saveForm();
@@ -81,4 +82,8 @@ document.querySelector("#cities").addEventListener("click", (e) =>{
 
 document.querySelector("#emergency_contact").addEventListener("click", (e) =>{
     emergency_contact.showFormEmergencyContact();
+})
+
+document.querySelector("#admin_area").addEventListener("click", (e) =>{
+    admin_area.showFormAdminArea();
 })

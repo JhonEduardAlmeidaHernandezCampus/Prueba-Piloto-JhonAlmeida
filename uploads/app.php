@@ -497,6 +497,32 @@ header("Access-Control-Allow-Headers: *");
         \App\emergency_contact::getInstance()->deleteEmergencyContact($id);
     });
 
+
+
+
+    // Admin Area 
+    $router->post("/postAdminArea", function (){
+        $_DATA = json_decode(file_get_contents("php://input"), true);
+        \App\admin_area::getInstance()->postAdminArea(...$_DATA);
+    });
+
+    $router->get("/getAllAdminArea", function (){
+        echo json_decode(\App\admin_area::getInstance()->getAllAdminArea());
+    });
+
+    $router->get("/getAdminArea/{id}", function ($id){
+        echo json_decode(\App\admin_area::getInstance()->getAdminArea($id));
+    });
+
+    $router->put("/putAdminArea/{id}", function ($id){
+        $_DATA = json_decode(file_get_contents("php://input"), true);
+        \App\admin_area::getInstance()->updateAdminArea($_DATA, $id);
+    });
+
+    $router->delete("/deleteAdminArea/{id}", function ($id){
+        \App\admin_area::getInstance()->deleteAdminArea($id);
+    });
+
     $router->run();
 
 ?>

@@ -8,8 +8,8 @@ namespace App;
         // protected $dbname = 'campusland'; 
 
         protected $host = 'localhost';
-        private $user = 'root';
-        private $password = '';
+        private $user = 'campus';
+        private $password = 'campus2023';
         protected $dbname = 'campusland'; 
 
         public function __get($name){

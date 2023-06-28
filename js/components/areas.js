@@ -14,7 +14,7 @@ export default {
                 header: {"Content-Type": "application/json"}
             }
 
-            let peticion = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllAreas", config)).json();
+            let peticion = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllAreas", config)).json();
 
             let plantilla = `
                             <div class="cont">
@@ -64,7 +64,7 @@ export default {
                 body: JSON.stringify(data)
             }
 
-            let peticion = await (await fetch ("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/postAreas", config)).text()
+            let peticion = await (await fetch ("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/postAreas", config)).text()
             alert("Agregado Exitosamente");
             formArea.reset();
         })
@@ -82,7 +82,7 @@ export default {
                     header: {"Content-Type": "application/json"},
                 }
     
-                let peticion = await (await fetch (`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/deleteAreas/${data}`, config)).text()
+                let peticion = await (await fetch (`http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/deleteAreas/${data}`, config)).text()
                 alert("Eliminado Exitosamente");
                 window.location.reload();
             })
@@ -102,7 +102,7 @@ export default {
                     header: {"Content-Type": "application/json"},
                 }
 
-                let info = await ( await fetch(`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAreas/${idbtn}`, config)).json();
+                let info = await ( await fetch(`http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAreas/${idbtn}`, config)).json();
                 document.querySelector("#areasContent").innerHTML =   `
                                                                             <h3>AREAS</h3>
                                                                             
@@ -139,7 +139,7 @@ export default {
                 body:JSON.stringify(data)
             }
 
-            let res = await (await fetch(`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/putAreas/${id}`, config)).text();
+            let res = await (await fetch(`http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/putAreas/${id}`, config)).text();
             alert("Actualizado Exitosamente");
             newFormAreas.reset();
             window.location.reload();
