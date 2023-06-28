@@ -15,7 +15,6 @@ export default {
             }
 
             let peticion = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllRoutes", config)).json();
-
             let plantilla = `
                             <div class="cont">
                                 <table class="showTable">

@@ -4,7 +4,8 @@ namespace App;
         use getInstance;
         private $message;
         private $queryPostJourney = 'INSERT INTO journey (name_journey, check_in, check_out) VALUES (:name_journey, :check_in, :check_out)';
-        private $queryGetJourney = 'SELECT * FROM journey';
+        private $queryGetAllJourney = 'SELECT * FROM journey';
+        private $queryGetJourney = 'SELECT * FROM journey WHERE id = :id_journey';
         private $queryUpdateJourney = 'UPDATE journey SET name_journey = :name_journey, check_in = :check_in, check_out = :check_out WHERE id = :id_journey';
         private $queryDeleteJourney = 'DELETE FROM journey WHERE id = :id_journey';
 
@@ -26,12 +27,12 @@ namespace App;
                 echo json_encode($this->message, JSON_PRETTY_PRINT);
             }
         }
-
-        public function getJourney(){
+        
+        public function getAllJourney(){
             try {
-                $res = $this->connec->prepare($this->queryGetJourney);
+                $res = $this->connec->prepare($this->queryGetAllJourney);
                 $res->execute();
-                $this->message = ["STATUS" => 200, "MESSAGE" =>$res->fetchAll(PDO::FETCH_ASSOC)];
+                $this->message = ["STATUS" => 200, "MESSAGE" =>$res->fetchAll(\PDO::FETCH_ASSOC)];
 
             } catch (\PDOException $error) {
                 $this->message = $error->getMessage();
@@ -41,7 +42,25 @@ namespace App;
             }
         }
 
-        public function updateJourney($name_journey, $check_in, $check_out, $id_journey){
+        public function getJourney($id_journey){
+            try {
+                $res = $this->connec->prepare($this->queryGetJourney);
+                $res->bindValue("id_journey", $id_journey);
+                $res->execute();
+                $this->message = ["STATUS" => 200, "MESSAGE" =>$res->fetchAll(\PDO::FETCH_ASSOC)];
+
+            } catch (\PDOException $error) {
+                $this->message = $error->getMessage();
+
+            } finally {
+                echo json_encode($this->message, JSON_PRETTY_PRINT);
+            }
+        }
+
+        public function updateJourney($data, $id_journey){
+            $name_journey = $data["name_journey"];
+            $check_in = $data["check_in"];
+            $check_out = $data["check_out"];
             try {
                 $res = $this->connec->prepare($this->queryUpdateJourney);
                 $res->bindValue("name_journey", $name_journey);

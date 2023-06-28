@@ -210,7 +210,12 @@
 
 		<main id="positionsContent" style="display: none;">
 			<h3>POSITIONS</h3>
-			<form class="row contenedorForm">
+			<ul class="breadcrumbs">
+				<li><a href="#" id="addDataPosition">Add</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" id="showDataPosition">Show Data</a></li>
+			</ul>
+			<form class="row contenedorForm" id="formPosition">
 				<div class="col-3">
 				  <label for="inputEmail4" class="form-label">Name Position</label>
 				  <input type="text" class="form-control" name="name_position" required>
@@ -223,6 +228,7 @@
 				  <button type="submit" class="btn">Save</button>
 				</div>
 			</form>
+			<div class="showPosition"></div>
 		</main>
 
 		<main id="academicAreaContent" style="display: none;">
@@ -352,7 +358,12 @@
 
 		<main id="levelsContent" style="display: none;">
 			<h3>LEVELS</h3>
-			<form class="row contenedorForm">
+			<ul class="breadcrumbs">
+				<li><a href="#" id="addDataLevels">Add</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" id="showDataLevels">Show Data</a></li>
+			</ul>
+			<form class="row contenedorForm" id="formLevels">
 				<div class="col-3">
 				  <label for="inputEmail4" class="form-label">Name Level</label>
 				  <input type="text" class="form-control" name="name_level" required>
@@ -365,6 +376,7 @@
 				  <button type="submit" class="btn">Save</button>
 				</div>
 			</form>
+			<div class="showLevels"></div>
 		</main>
 
 		<main id="trainersContent" style="display: none;">
@@ -582,7 +594,12 @@
 
 		<main id="countriesContent" style="display: none;">
 			<h3>COUNTRIES</h3>
-			<form class="row contenedorForm g-3">
+			<ul class="breadcrumbs">
+				<li><a href="#" id="addDataCountries">Add</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" id="showDataCountries">Show Data</a></li>
+			</ul>
+			<form class="row contenedorForm g-3" id="formCountries">
 				<div class="col-3">
 				  <label for="inputEmail4" class="form-label">Name Country</label>
 				  <input type="text" class="form-control" name="name_country" required>
@@ -591,41 +608,12 @@
 				  <button type="submit" class="btn">Save</button>
 				</div>
 			</form>
+			<div class="showCountries"></div>
 		</main>
 
-		<main id="regionsContent" style="display: none;">
-			<h3>REGIONS</h3>
-			<form class="row contenedorForm g-3">
-				<div class="col-3">
-				  <label for="inputEmail4" class="form-label">Name Region</label>
-				  <input type="text" class="form-control" name="name_region" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">ID Country</label>
-					<input type="number" class="form-control" name="id_country" required>
-				</div>
-				<div class="col-12 mt-3">
-				  <button type="submit" class="btn">Save</button>
-				</div>
-			</form>
-		</main>
+		<main id="regionsContent" style="display: none;"></main>
 
-		<main id="citiesContent" style="display: none;">
-			<h3>CITIES</h3>
-			<form class="row contenedorForm g-3">
-				<div class="col-3">
-				  <label for="inputEmail4" class="form-label">Name City</label>
-				  <input type="text" class="form-control" name="name_city" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">ID Region</label>
-					<input type="number" class="form-control" name="id_region" required>
-				</div>
-				<div class="col-12 mt-3">
-				  <button type="submit" class="btn">Save</button>
-				</div>
-			</form>
-		</main>
+		<main id="citiesContent"></main>
 
 		<main id="contactInfoContent" style="display: none;">
 			<h3>CONTACT INFO</h3>
@@ -664,34 +652,7 @@
 			</form>
 		</main>
 		
-		<main id="emergencyContactContent" style="display: none;">
-			<h3>EMERGENCY CONTACT</h3>
-			<form class="row contenedorForm g-3">
-				<div class="col-2">
-				  <label for="inputEmail4" class="form-label">ID Staff</label>
-				  <input type="number" class="form-control" name="id_staff" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">Cellphone</label>
-					<input type="text" class="form-control" name="cel_number" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">Relationship</label>
-					<input type="text" class="form-control" name="relationship" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">Full Name</label>
-					<input type="text" class="form-control" name="full_name" required>
-				</div>
-				<div class="col-4">
-					<label for="inputEmail4" class="form-label">Email</label>
-					<input type="email" class="form-control" name="email" required>
-				</div>
-				<div class="col-12 mt-3">
-				  <button type="submit" class="btn">Save</button>
-				</div>
-			</form>
-		</main>
+		<main id="emergencyContactContent"></main>
 
 		<main id="workingInfoContent" style="display: none;">
 			<h3>WORKING INFO</h3>
@@ -732,7 +693,12 @@
 
 		<main id="personalReferenceContent" style="display: none;">
 			<h3>PERSONAL REFERENCE</h3>
-			<form class="row contenedorForm g-3">
+			<ul class="breadcrumbs">
+				<li><a href="#" id="addDataPersonalReference">Add</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" id="showDataPersonalReference">Show Data</a></li>
+			</ul>
+			<form class="row contenedorForm g-3" id="formPersonalReference">
 				<div class="col-3">
 					<label for="inputEmail4" class="form-label">Full Name</label>
 					<input type="text" class="form-control" name="full_name" required>
@@ -753,11 +719,17 @@
 				  <button type="submit" class="btn">Save</button>
 				</div>
 			</form>
+			<div class="showPersonalReference"></div>
 		</main>
 
 		<main id="workReferenceContent" style="display: none;">
 			<h3>WORK REFERENCE</h3>
-			<form class="row contenedorForm g-3">
+			<ul class="breadcrumbs">
+				<li><a href="#" id="addDataWorkReferences">Add</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" id="showDataWorkReferences">Show Data</a></li>
+			</ul>
+			<form class="row contenedorForm g-3" id="formWorkReferences">
 				<div class="col-3">
 					<label for="inputEmail4" class="form-label">Full Name</label>
 					<input type="text" class="form-control" name="full_name" required>
@@ -778,6 +750,7 @@
 				  <button type="submit" class="btn">Save</button>
 				</div>
 			</form>
+			<div class="showWorkReferences"></div>
 		</main>
 
 		<main id="softSkillsContent" style="display: none;">
@@ -911,73 +884,11 @@
 			<div class="showSubjects"></div>
 		</main>
 
-		<main id="themesContent" style="display: none;">
-			<h3>THEMES</h3>
-			<form class="row contenedorForm g-3">
-				<div class="col-2">
-					<label for="inputEmail4" class="form-label">ID Chapter</label>
-					<input type="number" class="form-control" name="id_chapter" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">Name Theme</label>
-					<input type="text" class="form-control" name="name_theme" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">Start Date</label>
-					<input type="date" class="form-control" name="start_date" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">End Date</label>
-					<input type="date" class="form-control" name="end_date" required>
-				</div>
-				<div class="col-5">
-					<label for="inputEmail4" class="form-label">Description</label>
-					<input type="text" class="form-control" name="description" required>
-				</div>
-				<div class="col-2">
-					<label for="inputEmail4" class="form-label">Duration Days</label>
-					<input type="number" class="form-control" name="duration_days" required>
-				</div>
-				<div class="col-12 mt-3">
-				  <button type="submit" class="btn">Save</button>
-				</div>
-			</form>
-		</main>
+		<main id="themesContent"></main>
 
 		<main id="thematicUnitsContent"></main>
 
-		<main id="topicsContent" style="display: none;">
-			<h3>TOPICS</h3>
-			<form class="row contenedorForm g-3">
-				<div class="col-2">
-					<label for="inputEmail4" class="form-label">ID Module</label>
-					<input type="number" class="form-control" name="id_module" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">Name Topic</label>
-					<input type="text" class="form-control" name="name_topic" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">Start Date</label>
-					<input type="date" class="form-control" name="start_date" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">End Date</label>
-					<input type="date" class="form-control" name="end_date" required>
-				</div>
-				<div class="col-5">
-					<label for="inputEmail4" class="form-label">Description</label>
-					<input type="text" class="form-control" name="description" required>
-				</div>
-				<div class="col-2">
-					<label for="inputEmail4" class="form-label">Duration Days</label>
-					<input type="number" class="form-control" name="duration_days" required>
-				</div>
-				<div class="col-12 mt-3">
-				  <button type="submit" class="btn">Save</button>
-				</div>
-			</form>
-		</main>
+		<main id="topicsContent"></main>
 
 		<main id="optionalTopicsContent" style="display: none;">
 			<h3>OPTIONAL TOPICS</h3>
@@ -1010,7 +921,12 @@
 
 		<main id="teamEducatorsContent" style="display: none;">
 			<h3>TEAM EDUCATORS</h3>
-			<form class="row contenedorForm g-3">
+			<ul class="breadcrumbs">
+				<li><a href="#" id="addDataTeamEducators">Add</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" id="showDataTeamEducators">Show Data</a></li>
+			</ul>
+			<form class="row contenedorForm g-3" id="formTeamEducators">
 				<div class="col-3">
 					<label for="inputEmail4" class="form-label">Name Rol</label>
 					<input type="text" class="form-control" name="name_rol" required>
@@ -1019,6 +935,7 @@
 				  <button type="submit" class="btn">Save</button>
 				</div>
 			</form>
+			<div class="showTeamEducators"></div>
 		</main>
 
 		<main id="teamScheduleContent" style="display: none;">
@@ -1070,77 +987,20 @@
 			</form>
 		</main>
 
-		<main id="chaptersContent" style="display: none;">
-			<h3>CHAPTER</h3>
-			<form class="row contenedorForm g-3">
-				<div class="col-2">
-					<label for="inputEmail4" class="form-label">ID Thematic Units</label>
-					<input type="number" class="form-control" name="id_thematic_units" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">Name Chapter</label>
-					<input type="text" class="form-control" name="name_chapter" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">Start Date</label>
-					<input type="date" class="form-control" name="start_date" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">End Date</label>
-					<input type="date" class="form-control" name="end_date" required>
-				</div>
-				<div class="col-5">
-					<label for="inputEmail4" class="form-label">Description</label>
-					<input type="text" class="form-control" name="description" required>
-				</div>
-				<div class="col-2">
-					<label for="inputEmail4" class="form-label">Duration Days</label>
-					<input type="number" class="form-control" name="duration_days" required>
-				</div>
-				<div class="col-12 mt-3">
-				  <button type="submit" class="btn">Save</button>
-				</div>
-			</form>
-		</main>
+		<main id="chaptersContent"></main>
 
-		<main id="modulesContent" style="display: none;">
-			<h3>MODULES</h3>
-			<form class="row contenedorForm g-3">
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">Name Module</label>
-					<input type="text" class="form-control" name="name_module" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">Start Date</label>
-					<input type="date" class="form-control" name="start_date" required>
-				</div>
-				<div class="col-3">
-					<label for="inputEmail4" class="form-label">End Date</label>
-					<input type="date" class="form-control" name="end_date" required>
-				</div>
-				<div class="col-5">
-					<label for="inputEmail4" class="form-label">Description</label>
-					<input type="text" class="form-control" name="description" required>
-				</div>
-				<div class="col-2">
-					<label for="inputEmail4" class="form-label">Duration Days</label>
-					<input type="number" class="form-control" name="duration_days" required>
-				</div>
-				<div class="col-2">
-					<label for="inputEmail4" class="form-label">ID Theme</label>
-					<input type="number" class="form-control" name="id_theme" required>
-				</div>
-				<div class="col-12 mt-3">
-				  <button type="submit" class="btn">Save</button>
-				</div>
-			</form>
-		</main>
+		<main id="modulesContent"></main>
 
 		<main id="journeyContent" style="display: none;">
 			<h3>JOURNEY</h3>
-			<form class="row contenedorForm g-3">
+			<ul class="breadcrumbs">
+				<li><a href="#" id="addDataJourney">Add</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" id="showDataJourney">Show Data</a></li>
+			</ul>
+			<form class="row contenedorForm g-3" id="formJourney">
 				<div class="col-3">
-					<label for="inputEmail4" class="form-label">Name Joruney</label>
+					<label for="inputEmail4" class="form-label">Name Journey</label>
 					<input type="text" class="form-control" name="name_journey" required>
 				</div>
 				<div class="col-3">
@@ -1155,6 +1015,7 @@
 				  <button type="submit" class="btn">Save</button>
 				</div>
 			</form>
+			<div class="showJourney"></div>
 		</main>
 
 		<main id="routeContent" style="display: none;">

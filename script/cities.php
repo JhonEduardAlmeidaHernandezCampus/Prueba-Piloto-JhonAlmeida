@@ -4,8 +4,9 @@ namespace App;
         use getInstance;
         private $message;
         private $queryPostCities = 'INSERT INTO cities (name_city, id_region) VALUES (:name_city, :id_region)';
-        private $queryGetCities = 'SELECT countries.id AS Id_Pais, countries.name_country AS Nombre_Pais, regions.id AS Id_Region, regions.name_region AS Nombre_Region, cities.id AS Id_Ciudad, cities.name_city AS Nombre_Ciudad FROM cities INNER JOIN regions ON cities.id_region = regions.id INNER JOIN countries ON regions.id_country = countries.id';
-        private $queryUpdateCities = 'UPDATE cities SET name_city = :name_city, id_region = :id_region WHERE id = :id_city';
+        private $queryGetAllCities = 'SELECT cities.id AS Code, countries.name_country, regions.name_region, cities.name_city FROM cities INNER JOIN regions ON cities.id_region = regions.id INNER JOIN countries ON regions.id_country = countries.id';
+        private $queryGetCities = 'SELECT cities.id AS Code, cities.name_city, regions.id, regions.name_region FROM cities INNER JOIN regions ON cities.id_region = regions.id WHERE cities.id = :id_cities';
+        private $queryUpdateCities = 'UPDATE cities SET name_city = :name_city, id_region = :id_region WHERE id = :id_cities';
         private $queryDeleteCities = 'DELETE FROM cities WHERE id = :id_cities';
 
         public function __construct(){parent::__construct();}
@@ -26,11 +27,11 @@ namespace App;
             }
         }
 
-        public function getCities(){
+        public function getAllCities(){
             try {
-                $res = $this->connec->prepare($this->queryGetCities);
+                $res = $this->connec->prepare($this->queryGetAllCities);
                 $res->execute();
-                $this->message = ["STATUS" => 200, "MESSAGE" => $res->fetchAll(PDO::FETCH_ASSOC)];
+                $this->message = ["STATUS" => 200, "MESSAGE" => $res->fetchAll(\PDO::FETCH_ASSOC)];
 
             } catch (\PDOException $error) {
                 $this->message = $error->getMessage();
@@ -40,12 +41,29 @@ namespace App;
             }
         }
 
-        public function UpdateCities($name_city, $id_region, $id_city){
+        public function getCities($id_cities){
+            try {
+                $res = $this->connec->prepare($this->queryGetCities);
+                $res->bindValue("id_cities", $id_cities);
+                $res->execute();
+                $this->message = ["STATUS" => 200, "MESSAGE" => $res->fetchAll(\PDO::FETCH_ASSOC)];
+
+            } catch (\PDOException $error) {
+                $this->message = $error->getMessage();
+
+            } finally {
+                echo json_encode($this->message, JSON_PRETTY_PRINT);
+            }
+        }
+
+        public function updateCities($data, $id_cities){
+            $name_city = $data["name_city"];
+            $id_region = $data["id_region"];
             try {
                 $res = $this->connec->prepare($this->queryUpdateCities);
                 $res->bindValue("name_city", $name_city);
                 $res->bindValue("id_region", $id_region);
-                $res->bindValue("id_city", $id_city);
+                $res->bindValue("id_cities", $id_cities);
                 $res->execute();
                 $this->message = ["STATUS" => 200, "MESSAGE" => "Actualizado Exitosamente"];
 
@@ -57,7 +75,7 @@ namespace App;
             }
         }
 
-        public function DeleteCities($id_cities){
+        public function deleteCities($id_cities){
             try {
                 $res = $this->connec->prepare($this->queryDeleteCities);
                 $res->bindValue("id_cities", $id_cities);

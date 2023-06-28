@@ -4,7 +4,8 @@ namespace App;
         use getInstance;
         private $message;
         private $queryPostPersonalReference = 'INSERT INTO personal_ref (full_name, cel_number, relationship, occupation) VALUES (:full_name, :cel_number, :relationship, :occupation)';
-        private $queryGetPersonalReference = 'SELECT * FROM personal_ref';
+        private $queryGetAllPersonalReference = 'SELECT * FROM personal_ref';
+        private $queryGetPersonalReference = 'SELECT * FROM personal_ref WHERE id = :id_personal_ref';
         private $queryUpdatePersonalReference = 'UPDATE personal_ref SET full_name = :full_name, cel_number = :cel_number, relationship = :relationship, occupation = :occupation WHERE id = :id_personal_ref';
         private $queryDeletePersonalReference = 'DELETE FROM personal_ref WHERE id = :id_personal_ref';
 
@@ -28,11 +29,11 @@ namespace App;
             }
         }
 
-        public function getPersonalReference(){
+        public function getAllPersonalReference(){
             try {
-                $res = $this->connec->prepare($this->queryGetPersonalReference);
+                $res = $this->connec->prepare($this->queryGetAllPersonalReference);
                 $res->execute();
-                $this->message = ["STATUS" => 200, "MESSAGE" => $res->fetchAll(PDO::FETCH_ASSOC)];
+                $this->message = ["STATUS" => 200, "MESSAGE" => $res->fetchAll(\PDO::FETCH_ASSOC)];
 
             } catch (\PDOException $error) {
                 $this->message = $error->getMessage();
@@ -42,7 +43,26 @@ namespace App;
             }
         }
 
-        public function UpdatePersonalReference($full_name, $cel_number, $relationship, $occupation, $id_personal_ref){
+        public function getPersonalReference($id_personal_ref){
+            try {
+                $res = $this->connec->prepare($this->queryGetPersonalReference);
+                $res->bindValue('id_personal_ref', $id_personal_ref);
+                $res->execute();
+                $this->message = ["STATUS" => 200, "MESSAGE" => $res->fetchAll(\PDO::FETCH_ASSOC)];
+
+            } catch (\PDOException $error) {
+                $this->message = $error->getMessage();
+
+            } finally {
+                echo json_encode($this->message, JSON_PRETTY_PRINT);
+            }
+        }
+
+        public function updatePersonalReference($data, $id_personal_ref){
+            $full_name = $data["full_name"];
+            $cel_number = $data["cel_number"];
+            $relationship = $data["relationship"];
+            $occupation = $data["occupation"];
             try {
                 $res = $this->connec->prepare($this->queryUpdatePersonalReference);
                 $res->bindValue('full_name', $full_name);
@@ -61,7 +81,7 @@ namespace App;
             }
         }
 
-        public function DeletePersonalReference($id_personal_ref){
+        public function deletePersonalReference($id_personal_ref){
             try {
                 $res = $this->connec->prepare($this->queryDeletePersonalReference);
                 $res->bindValue('id_personal_ref', $id_personal_ref);

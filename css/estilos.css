@@ -33,11 +33,22 @@ input[type=number] { -moz-appearance:textfield; }
 .showLocations,
 .showSubjects,
 .showArea,
-.showRoute{
+.showRoute,
+.showCountries,
+.showTeamEducators,
+.showLevels,
+.showWorkReferences,
+.showPosition,
+.showJourney {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.selectorValue select{
+    width: 97%;
+    padding: 6px;
 }
 
 .showTable .id{

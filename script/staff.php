@@ -3,7 +3,8 @@ namespace App;
 class staff extends connect{
     use getInstance;
     private $queryPostStaff = 'INSERT INTO staff (doc, first_name, second_name, first_surname, second_surname, eps, id_area, id_city) VALUES (:doc, :first_name, :second_name, :first_surname, :second_surname, :eps, :id_area, :id_city)';
-    private $queryGetStaff = 'SELECT staff.id AS id, doc AS cc, first_name AS name_first, second_name AS name_second, first_surname AS surname_first, second_surname AS surname_second, eps, cities.id AS city_code, name_city AS city_name, areas.id AS area_code, name_area AS area_name FROM staff INNER JOIN cities ON staff.id_city = cities.id INNER JOIN areas ON staff.id_area = areas.id';
+    private $queryGetAllStaff = 'SELECT staff.id AS Code, doc, first_name, second_name, first_surname, second_surname, eps, cities.id, name_city, areas.id, name_area FROM staff INNER JOIN cities ON staff.id_city = cities.id INNER JOIN areas ON staff.id_area = areas.id';
+    private $queryGetStaff = 'SELECT staff.id AS id, doc AS cc, first_name AS name_first, second_name AS name_second, first_surname AS surname_first, second_surname AS surname_second, eps, cities.id AS city_code, name_city AS city_name, areas.id AS area_code, name_area AS area_name FROM staff INNER JOIN cities ON staff.id_city = cities.id INNER JOIN areas ON staff.id_area = areas.id WHERE staff.id = :id_staff';
     private $queryUpdateStaff = 'UPDATE staff SET doc = :doc, first_name = :first_name, second_name = :second_name, first_surname = :first_surname, second_surname = :second_surname, eps = :eps, id_area = :id_area, id_city = :id_city WHERE id = :id_staff';
     private $queryDeleteStaff = 'DELETE FROM staff WHERE id = :id_staff';
 
@@ -30,9 +31,24 @@ class staff extends connect{
         }
     }
 
-    public function getStaff(){
+    public function getAllStaff(){
+        try {
+            $res = $this->connec->prepare($this->queryGetAllStaff);
+            $res->execute();
+            $this->message = ["STATUS" => 200, "MESSAGE" => $res->fetchAll(\PDO::FETCH_ASSOC)];
+
+        } catch (\PDOException $error) {
+            $this->message = $error->getMessage();
+
+        } finally{
+            echo json_encode($this->message, JSON_PRETTY_PRINT);
+        }
+    }
+
+    public function getStaff($id_staff){
         try {
             $res = $this->connec->prepare($this->queryGetStaff);
+            $res->bindValue("id_staff", $id_staff);
             $res->execute();
             $this->message = ["STATUS" => 200, "MESSAGE" => $res->fetchAll(\PDO::FETCH_ASSOC)];
 
