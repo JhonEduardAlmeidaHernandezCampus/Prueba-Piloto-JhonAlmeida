@@ -55,7 +55,6 @@ export default {
         formCountries.addEventListener("submit", async(e) =>{
             e.preventDefault();
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_country = data.name_country.toLocaleUpperCase();
             
             let config = {
                 method: 'POST',
@@ -130,7 +129,6 @@ export default {
             let id = btnUpdate.id;
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_country = data.name_country.toLocaleUpperCase();
 
             let config = {
                 method: "PUT",

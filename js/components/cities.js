@@ -127,7 +127,6 @@ export default {
             e.preventDefault();
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_city = data.name_city.toLocaleUpperCase();
             
             let config = {
                 method: 'POST',
@@ -167,7 +166,6 @@ export default {
             val.addEventListener("click",  async(e)=>{
                 
                 let idbtn = val.dataset.id;
-                console.log(idbtn);
 
                 let config = {
                     method: "GET",
@@ -175,9 +173,7 @@ export default {
                 }
 
                 let peticion = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllRegion", config)).json();
-                console.log(peticion);
                 let info = await ( await fetch(`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getCities/${idbtn}`, config)).json();
-                console.log(info);
                 document.querySelector("#citiesContent").innerHTML =`
                                                                         <h3>CITIES</h3>
                                                                         <div class="contPrint">
@@ -217,7 +213,6 @@ export default {
             let id = btnUpdate.id;
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_city = data.name_city.toLocaleUpperCase();
 
             let config = {
                 method: "PUT",

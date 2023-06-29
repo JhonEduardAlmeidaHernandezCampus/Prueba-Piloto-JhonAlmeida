@@ -58,9 +58,6 @@ export default {
             e.preventDefault();
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_level = data.name_level.toLocaleUpperCase();
-            data.group_level = data.group_level.toLocaleUpperCase();
-            console.log(data);
             
             let config = {
                 method: 'POST',
@@ -107,7 +104,6 @@ export default {
                 }
 
                 let info = await ( await fetch(`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getLevels/${idbtn}`, config)).json();
-                console.log(info);
                 document.querySelector("#levelsContent").innerHTML = `
                                                                         <h3>TEAM EDUCATORS</h3>
 
@@ -140,8 +136,6 @@ export default {
             let id = btnUpdate.id;
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_level = data.name_level.toLocaleUpperCase();
-            data.group_level = data.group_level.toLocaleUpperCase();
 
             let config = {
                 method: "PUT",

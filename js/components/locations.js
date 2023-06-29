@@ -55,14 +55,13 @@ export default {
         formLocations.addEventListener("submit", async(e) =>{
             e.preventDefault();
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_location = data.name_location.toLocaleUpperCase();
             
             let config = {
                 method: 'POST',
                 header: {"Content-Type":"application/json"},
                 body: JSON.stringify(data)
             }
-            let peticion = await (await fetch ("http://localhost/SpUkM01-094/Prueba-Piloto-JhonAlmeida/uploads/postLocations", config)).text()
+            let peticion = await (await fetch ("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/postLocations", config)).text()
             alert("Agregado Exitosamente");
             formLocations.reset();
             window.location.reload();
@@ -81,8 +80,8 @@ export default {
                     header: {"Content-Type": "application/json"},
                 }
     
-                let peticion = await (await fetch (`http://localhost/SpUkM01-094/Prueba-Piloto-JhonAlmeida/uploads/deleteLocations/${data}`, config)).text()
-                alert(peticion);
+                let peticion = await (await fetch (`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/deleteLocations/${data}`, config)).text()
+                alert("Eliminado Exitosamente");
                 window.location.reload();
             })
         })
@@ -130,7 +129,6 @@ export default {
             let id = btnUpdate.id;
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_location = data.name_location.toLocaleUpperCase();
 
             let config = {
                 method: "PUT",

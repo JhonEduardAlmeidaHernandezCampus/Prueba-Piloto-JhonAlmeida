@@ -55,7 +55,6 @@ export default {
         formTeamEducators.addEventListener("submit", async(e) =>{
             e.preventDefault();
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_rol = data.name_rol.toLocaleUpperCase();
             
             let config = {
                 method: 'POST',
@@ -102,7 +101,6 @@ export default {
                 }
 
                 let info = await ( await fetch(`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getTeamEducators/${idbtn}`, config)).json();
-                console.log(info);
                 document.querySelector("#teamEducatorsContent").innerHTML = `
                                                                         <h3>TEAM EDUCATORS</h3>
                                                                         
@@ -131,7 +129,6 @@ export default {
             let id = btnUpdate.id;
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_rol = data.name_rol.toLocaleUpperCase();
 
             let config = {
                 method: "PUT",

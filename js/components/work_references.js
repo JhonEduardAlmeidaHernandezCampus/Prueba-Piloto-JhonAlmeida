@@ -62,9 +62,6 @@ export default {
             e.preventDefault();
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.full_name = data.full_name.toLocaleUpperCase();
-            data.position = data.position.toLocaleUpperCase();
-            data.company = data.company.toLocaleUpperCase();
             
             let config = {
                 method: 'POST',
@@ -111,7 +108,6 @@ export default {
                 }
 
                 let info = await ( await fetch(`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getWorkReference/${idbtn}`, config)).json();
-                console.log(info);
                 document.querySelector("#workReferenceContent").innerHTML = `
                                                                                 <h3>WORK REFERENCE</h3>
                                                                                 <form class="row contenedorForm g-3" id="newFormWorkReferences">
@@ -151,9 +147,6 @@ export default {
             let id = btnUpdate.id;
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.full_name = data.full_name.toLocaleUpperCase();
-            data.position = data.position.toLocaleUpperCase();
-            data.company = data.company.toLocaleUpperCase();
 
             let config = {
                 method: "PUT",

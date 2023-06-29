@@ -83,7 +83,6 @@ export default {
             }
 
             let peticion = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllRegion", config)).json();  
-            console.log(peticion);        
             let plantilla = `
                             <div class="cont">
                                 <table class="showTable">
@@ -126,7 +125,6 @@ export default {
             e.preventDefault();
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_region = data.name_region.toLocaleUpperCase();
             
             let config = {
                 method: 'POST',
@@ -173,9 +171,7 @@ export default {
                 }
 
                 let peticion = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllCountry", config)).json();
-                console.log(peticion);
                 let info = await ( await fetch(`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getRegion/${idbtn}`, config)).json();
-                console.log(info);
                 document.querySelector("#regionsContent").innerHTML = `
                                                                             <h3>REGIONS</h3>
                                                                             <div class="contPrint">
@@ -215,7 +211,6 @@ export default {
             let id = btnUpdate.id;
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_region = data.name_region.toLocaleUpperCase();
 
             let config = {
                 method: "PUT",

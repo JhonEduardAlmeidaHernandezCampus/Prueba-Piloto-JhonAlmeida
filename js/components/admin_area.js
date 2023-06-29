@@ -5,10 +5,10 @@ export default {
             header: {"Content-Type": "application/json"}
         }
 
-        let peticionArea = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllAreas", config)).json();
-        let peticionStaff = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllStaff", config)).json();
-        let peticionPosition = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllPosition", config)).json();
-        let peticionJourney = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllJourney", config)).json();
+        let peticionArea = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllAreas", config)).json();
+        let peticionStaff = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllStaff", config)).json();
+        let peticionPosition = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllPosition", config)).json();
+        let peticionJourney = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllJourney", config)).json();
             document.querySelector("#adminAreaContent").innerHTML = `
                                                                     <h3>ADMIN AREA</h3>
                                                                     <ul class="breadcrumbs">
@@ -76,10 +76,10 @@ export default {
                 header: {"Content-Type": "application/json"}
             }
     
-            let peticionArea = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllAreas", config)).json();
-            let peticionStaff = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllStaff", config)).json();
-            let peticionPosition = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllPosition", config)).json();
-            let peticionJourney = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllJourney", config)).json();
+            let peticionArea = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllAreas", config)).json();
+            let peticionStaff = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllStaff", config)).json();
+            let peticionPosition = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllPosition", config)).json();
+            let peticionJourney = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllJourney", config)).json();
             let plantilla = `
                             <form class="row contenedorForm" id="formAdminArea">
                                 <div class="col-3 selectorValue">
@@ -134,7 +134,7 @@ export default {
                 header: {"Content-Type": "application/json"}
             }
 
-            let peticion = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllAdminArea", config)).json();          
+            let peticion = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllAdminArea", config)).json();          
             let plantilla = `
                             <div class="cont">
                                 <table class="showTable">
@@ -154,7 +154,7 @@ export default {
                                     ${peticion.MESSAGE.map((val, id)=>{
                                         return  `
                                                     <tr>
-                                                        <td>${val.Code}</td>
+                                                        <td>${val.CodeAdmin}</td>
                                                         <td>${val.name_area}</td>
                                                         <td>${val.doc}</td>
                                                         <td>${val.first_name}</td>
@@ -162,8 +162,8 @@ export default {
                                                         <td>${val.name_position}</td>
                                                         <td>${val.name_journey}</td>
                                                         <td class="contBut">
-                                                            <button data-id="${val.Code}" id="update" class="btnSelectModi">M</button> 
-                                                            <button data-id="${val.Code}" id="delete" class="btnSelectDel">X</button>
+                                                            <button data-id="${val.CodeAdmin}" id="update" class="btnSelectModi">M</button> 
+                                                            <button data-id="${val.CodeAdmin}" id="delete" class="btnSelectDel">X</button>
                                                         </td>
                                                     </tr>
                                                 `
@@ -184,14 +184,14 @@ export default {
         formAdminArea.addEventListener("submit", async(e) =>{
             e.preventDefault();
             let data = Object.fromEntries(new FormData(e.target));
-            console.log(data);
+            
             let config = {
                 method: 'POST',
                 header: {"Content-Type":"application/json"},
                 body: JSON.stringify(data)
             }
 
-            let peticion = await (await fetch ("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/postAdminArea", config)).text()
+            let peticion = await (await fetch ("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/postAdminArea", config)).text()
             alert("Agregado Exitosamente");
             formAdminArea.reset();
         })
@@ -203,14 +203,13 @@ export default {
         btnUpdate.forEach((val, id) =>{
             val.addEventListener("click", async(e) =>{
                 let data = val.dataset.id;
-                console.log(data);
                 
                 let config = {
                     method: "DELETE",
                     header: {"Content-Type": "application/json"},
                 }
     
-                let peticion = await (await fetch (`http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/deleteAdminArea/${data}`, config)).text()
+                let peticion = await (await fetch (`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/deleteAdminArea/${data}`, config)).text()
                 alert("Eliminado Exitosamente");
                 window.location.reload();
             })
@@ -230,12 +229,11 @@ export default {
                     header: {"Content-Type": "application/json"},
                 }
 
-                let peticionArea = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllAreas", config)).json();
-                let peticionStaff = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllStaff", config)).json();
-                let peticionPosition = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllPosition", config)).json();
-                let peticionJourney = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllJourney", config)).json();
-                let info = await (await fetch("http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/getAllAdminArea", config)).json();
-                console.log(info);
+                let peticionArea = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllAreas", config)).json();
+                let peticionStaff = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllStaff", config)).json();
+                let peticionPosition = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllPosition", config)).json();
+                let peticionJourney = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllJourney", config)).json();
+                let info = await (await fetch(`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAdminArea/${idbtn}`, config)).json();
                 document.querySelector("#adminAreaContent").innerHTML = `
                                                                         <h3>ADMIN AREA</h3>
                                                                         
@@ -244,9 +242,9 @@ export default {
                                                                                 <div class="col-3 selectorValue">
                                                                                 <label for="inputEmail4" class="form-label">ID Area</label>
                                                                                     <select name="id_area">
-                                                                                    <option value="${peticionArea.MESSAGE[0].id}">${info.MESSAGE[0].name_area}</option>
+                                                                                    <option value="${info.MESSAGE[0].code_area}">${info.MESSAGE[0].name_area}</option>
                                                                                         ${peticionArea.MESSAGE.map((val) =>{ return `
-                                                                                                                                        <option value="${val.id}">${val.Name}</option>
+                                                                                                                                        <option value="${val.Code}">${val.Name}</option>
                                                                                                                                         `
                                                                                                                                         })}
                                                                                     </select>
@@ -254,7 +252,7 @@ export default {
                                                                                 <div class="col-3 selectorValue">
                                                                                     <label for="inputEmail4" class="form-label">ID Staff</label>
                                                                                         <select name="id_staff">
-                                                                                        <option value="${info.MESSAGE[0].id_staff}">${info.MESSAGE[0].doc}</option>
+                                                                                        <option value="${info.MESSAGE[0].code_staff}">${info.MESSAGE[0].Cc_staff}</option>
                                                                                             ${peticionStaff.MESSAGE.map((val, id) =>{ return    `
                                                                                                                                                 <option value="${val.Code}">${val.doc}</option>
                                                                                                                                                 `
@@ -302,7 +300,6 @@ export default {
             let id = btnUpdate.id;
 
             let data = Object.fromEntries(new FormData(e.target));
-            console.log(data);
 
             let config = {
                 method: "PUT",
@@ -310,7 +307,7 @@ export default {
                 body:JSON.stringify(data)
             }
 
-            let res = await (await fetch(`http://localhost/SkylAb-117/Prueba-Piloto-JhonAlmeida/uploads/putAdminArea/${id}`, config)).text();
+            let res = await (await fetch(`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/putAdminArea/${id}`, config)).text();
             alert("Actualizado Exitosamente");
             newFormAdminArea.reset();
             window.location.reload();

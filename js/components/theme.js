@@ -163,8 +163,6 @@ export default {
         formTheme.addEventListener("submit", async(e) =>{
             e.preventDefault();
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_theme = data.name_theme.toLocaleUpperCase();
-            data.description = data.description.toLocaleUpperCase();
             
             let config = {
                 method: 'POST',
@@ -224,7 +222,7 @@ export default {
                                                                                 <div class="col-2 selectorValue">
                                                                                     <label for="inputEmail4" class="form-label">ID Chapter</label>
                                                                                     <select name="id_chapter">
-                                                                                    <option value="${peticion.MESSAGE[0].Code}">${peticion.MESSAGE[0].name_chapter}</option>
+                                                                                    <option value="${info.MESSAGE[0].Code}">${info.MESSAGE[0].name_module}</option>
                                                                                         ${peticion.MESSAGE.map((val) =>{ return `
                                                                                                                                     <option value="${val.Code}">${val.name_chapter}</option>
                                                                                                                                     `

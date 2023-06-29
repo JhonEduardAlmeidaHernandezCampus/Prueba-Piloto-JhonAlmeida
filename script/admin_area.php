@@ -5,7 +5,7 @@ namespace App;
         private $message;
         private $queryPostAdminArea = 'INSERT INTO admin_area (id_area, id_staff, id_position, id_journey) VALUES (:id_area, :id_staff, :id_position, :id_journey)';
         private $queryGetAllAdminArea = 'SELECT admin_area.id as CodeAdmin, staff.*, areas.*, position.*, journey.* FROM admin_area INNER JOIN areas ON admin_area.id_area = areas.id INNER JOIN staff ON admin_area.id_staff = staff.id INNER JOIN position ON admin_area.id_position = position.id INNER JOIN journey ON admin_area.id_journey = journey.id';
-        private $queryGetAdminArea = 'SELECT * FROM admin_area INNER JOIN staff ON admin_area.id = staff.id INNER JOIN areas ON admin_area.id_area = areas.id INNER JOIN position ON admin_area.id_position = position.id INNER JOIN journey ON admin_area.id_journey = journey.id WHERE admin_area.id = :id_admin_area';
+        private $queryGetAdminArea = 'SELECT admin_area.id AS code_admin, areas.id AS code_area, areas.name_area AS name_area, staff.id AS code_staff, staff.doc AS Cc_staff, position.id AS id_position, position.name_position AS name_position, journey.id AS id_journey, journey.name_journey AS name_journey FROM admin_area INNER JOIN areas ON admin_area.id_area = areas.id INNER JOIN staff ON admin_area.id_staff = staff.id INNER JOIN position ON admin_area.id_position = position.id INNER JOIN journey ON admin_area.id_journey = journey.id WHERE admin_area.id = :id_admin_area';
         private $queryUpdateAdminArea = 'UPDATE admin_area SET id_area = :id_area, id_staff = :id_staff, id_position = :id_position, id_journey = :id_journey WHERE id = :id_admin_area';
         private $queryDeleteAdminArea = 'DELETE FROM admin_area WHERE id = :id_admin_area';
 

@@ -82,47 +82,47 @@ position.addEventListener("click", (e)=>{
     document.querySelector("#routeContent").style.display = "none";
 })
 
-let academic_area = document.querySelector("#academic_area");
-academic_area.addEventListener("click", (e)=>{
-    document.querySelector("#areasContent").style.display = "none";
-    document.querySelector("#positionsContent").style.display = "none";
-    document.querySelector("#academicAreaContent").style.display = "block";
-    document.querySelector("#adminAreaContent").style.display = "none";
-    document.querySelector("#desingAreaContent").style.display = "none";
-    document.querySelector("#maintAreaContent").style.display = "none";
-    document.querySelector("#marketingAreaContent").style.display = "none";
-    document.querySelector("#levelsContent").style.display = "none";
-    document.querySelector("#trainersContent").style.display = "none";
-    document.querySelector("#teachersContent").style.display = "none";
-    document.querySelector("#tutorsContent").style.display = "none";
-    document.querySelector("#campersContent").style.display = "none";
-    document.querySelector("#psychologistContent").style.display = "none";
-    document.querySelector("#staffContent").style.display = "none";
-    document.querySelector("#locationsContent").style.display = "none";
-    document.querySelector("#countriesContent").style.display = "none";
-    document.querySelector("#regionsContent").style.display = "none";
-    document.querySelector("#citiesContent").style.display = "none";
-    document.querySelector("#contactInfoContent").style.display = "none";
-    document.querySelector("#emergencyContactContent").style.display = "none";
-    document.querySelector("#workingInfoContent").style.display = "none";
-    document.querySelector("#personalReferenceContent").style.display = "none";
-    document.querySelector("#workReferenceContent").style.display = "none";
-    document.querySelector("#softSkillsContent").style.display = "none";
-    document.querySelector("#softwareSkillsContent").style.display = "none";
-    document.querySelector("#englishSkillsContent").style.display = "none";
-    document.querySelector("#reviewSkillsContent").style.display = "none";
-    document.querySelector("#subjectContent").style.display = "none";
-    document.querySelector("#themesContent").style.display = "none";
-    document.querySelector("#thematicUnitsContent").style.display = "none";
-    document.querySelector("#topicsContent").style.display = "none";
-    document.querySelector("#optionalTopicsContent").style.display = "none";
-    document.querySelector("#teamEducatorsContent").style.display = "none";
-    document.querySelector("#teamScheduleContent").style.display = "none";
-    document.querySelector("#chaptersContent").style.display = "none";
-    document.querySelector("#modulesContent").style.display = "none";
-    document.querySelector("#journeyContent").style.display = "none";
-    document.querySelector("#routeContent").style.display = "none";
-})
+// let academic_area = document.querySelector("#academic_area");
+// academic_area.addEventListener("click", (e)=>{
+//     document.querySelector("#areasContent").style.display = "none";
+//     document.querySelector("#positionsContent").style.display = "none";
+//     document.querySelector("#academicAreaContent").style.display = "block";
+//     document.querySelector("#adminAreaContent").style.display = "none";
+//     document.querySelector("#desingAreaContent").style.display = "none";
+//     document.querySelector("#maintAreaContent").style.display = "none";
+//     document.querySelector("#marketingAreaContent").style.display = "none";
+//     document.querySelector("#levelsContent").style.display = "none";
+//     document.querySelector("#trainersContent").style.display = "none";
+//     document.querySelector("#teachersContent").style.display = "none";
+//     document.querySelector("#tutorsContent").style.display = "none";
+//     document.querySelector("#campersContent").style.display = "none";
+//     document.querySelector("#psychologistContent").style.display = "none";
+//     document.querySelector("#staffContent").style.display = "none";
+//     document.querySelector("#locationsContent").style.display = "none";
+//     document.querySelector("#countriesContent").style.display = "none";
+//     document.querySelector("#regionsContent").style.display = "none";
+//     document.querySelector("#citiesContent").style.display = "none";
+//     document.querySelector("#contactInfoContent").style.display = "none";
+//     document.querySelector("#emergencyContactContent").style.display = "none";
+//     document.querySelector("#workingInfoContent").style.display = "none";
+//     document.querySelector("#personalReferenceContent").style.display = "none";
+//     document.querySelector("#workReferenceContent").style.display = "none";
+//     document.querySelector("#softSkillsContent").style.display = "none";
+//     document.querySelector("#softwareSkillsContent").style.display = "none";
+//     document.querySelector("#englishSkillsContent").style.display = "none";
+//     document.querySelector("#reviewSkillsContent").style.display = "none";
+//     document.querySelector("#subjectContent").style.display = "none";
+//     document.querySelector("#themesContent").style.display = "none";
+//     document.querySelector("#thematicUnitsContent").style.display = "none";
+//     document.querySelector("#topicsContent").style.display = "none";
+//     document.querySelector("#optionalTopicsContent").style.display = "none";
+//     document.querySelector("#teamEducatorsContent").style.display = "none";
+//     document.querySelector("#teamScheduleContent").style.display = "none";
+//     document.querySelector("#chaptersContent").style.display = "none";
+//     document.querySelector("#modulesContent").style.display = "none";
+//     document.querySelector("#journeyContent").style.display = "none";
+//     document.querySelector("#routeContent").style.display = "none";
+// })
 
 let admin_area = document.querySelector("#admin_area");
 admin_area.addEventListener("click", (e)=>{
@@ -166,6 +166,7 @@ admin_area.addEventListener("click", (e)=>{
     document.querySelector("#routeContent").style.display = "none";
 })
 
+/* 
 let design_area = document.querySelector("#design_area");
 design_area.addEventListener("click", (e)=>{
     document.querySelector("#areasContent").style.display = "none";
@@ -291,6 +292,7 @@ marketing_area.addEventListener("click", (e)=>{
     document.querySelector("#journeyContent").style.display = "none";
     document.querySelector("#routeContent").style.display = "none";
 })
+*/
 
 let levels = document.querySelector("#levels");
 levels.addEventListener("click", (e)=>{
@@ -334,6 +336,7 @@ levels.addEventListener("click", (e)=>{
     document.querySelector("#routeContent").style.display = "none";
 })
 
+/* 
 let trainers = document.querySelector("#trainers");
 trainers.addEventListener("click", (e)=>{
     document.querySelector("#areasContent").style.display = "none";
@@ -585,6 +588,7 @@ staff.addEventListener("click", (e)=>{
     document.querySelector("#journeyContent").style.display = "none";
     document.querySelector("#routeContent").style.display = "none";
 })
+*/
 
 let locations = document.querySelector("#locations");
 locations.addEventListener("click", (e)=>{
@@ -754,6 +758,7 @@ cities.addEventListener("click", (e)=>{
     document.querySelector("#routeContent").style.display = "none";
 })
 
+/* 
 let contact_info = document.querySelector("#contact_info");
 contact_info.addEventListener("click", (e)=>{
     document.querySelector("#areasContent").style.display = "none";
@@ -795,6 +800,7 @@ contact_info.addEventListener("click", (e)=>{
     document.querySelector("#journeyContent").style.display = "none";
     document.querySelector("#routeContent").style.display = "none";
 })
+*/
 
 let emergency_contact = document.querySelector("#emergency_contact");
 emergency_contact.addEventListener("click", (e)=>{
@@ -838,6 +844,7 @@ emergency_contact.addEventListener("click", (e)=>{
     document.querySelector("#routeContent").style.display = "none";
 })
 
+/*
 let working_info = document.querySelector("#working_info");
 working_info.addEventListener("click", (e)=>{
     document.querySelector("#areasContent").style.display = "none";
@@ -879,6 +886,7 @@ working_info.addEventListener("click", (e)=>{
     document.querySelector("#journeyContent").style.display = "none";
     document.querySelector("#routeContent").style.display = "none";
 })
+*/
 
 let personal_ref = document.querySelector("#personal_ref");
 personal_ref.addEventListener("click", (e)=>{
@@ -964,6 +972,7 @@ work_reference.addEventListener("click", (e)=>{
     document.querySelector("#routeContent").style.display = "none";
 })
 
+/*
 let soft_skills = document.querySelector("#soft_skills");
 soft_skills.addEventListener("click", (e)=>{
     document.querySelector("#areasContent").style.display = "none";
@@ -1131,6 +1140,7 @@ review_skills.addEventListener("click", (e)=>{
     document.querySelector("#journeyContent").style.display = "none";
     document.querySelector("#routeContent").style.display = "none";
 })
+*/
 
 let subjects = document.querySelector("#subjects");
 subjects.addEventListener("click", (e)=>{
@@ -1300,6 +1310,7 @@ topics.addEventListener("click", (e)=>{
     document.querySelector("#routeContent").style.display = "none";
 })
 
+/*
 let optional_topics = document.querySelector("#optional_topics");
 optional_topics.addEventListener("click", (e)=>{
     document.querySelector("#areasContent").style.display = "none";
@@ -1341,6 +1352,7 @@ optional_topics.addEventListener("click", (e)=>{
     document.querySelector("#journeyContent").style.display = "none";
     document.querySelector("#routeContent").style.display = "none";
 })
+*/
 
 let team_educators = document.querySelector("#team_educators");
 team_educators.addEventListener("click", (e)=>{
@@ -1384,6 +1396,7 @@ team_educators.addEventListener("click", (e)=>{
     document.querySelector("#routeContent").style.display = "none";
 })
 
+/*
 let team_schedule = document.querySelector("#team_schedule");
 team_schedule.addEventListener("click", (e)=>{
     document.querySelector("#areasContent").style.display = "none";
@@ -1425,6 +1438,7 @@ team_schedule.addEventListener("click", (e)=>{
     document.querySelector("#journeyContent").style.display = "none";
     document.querySelector("#routeContent").style.display = "none";
 })
+*/
 
 let chapters = document.querySelector("#chapters");
 chapters.addEventListener("click", (e)=>{

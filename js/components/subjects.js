@@ -56,7 +56,6 @@ export default {
         formSubjects.addEventListener("submit", async(e) =>{
             e.preventDefault();
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_subject = data.name_subject.toLocaleUpperCase();
             
             let config = {
                 method: 'POST',
@@ -131,7 +130,6 @@ export default {
             let id = btnUpdate.id;
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_subject = data.name_subject.toLocaleUpperCase();
 
             let config = {
                 method: "PUT",

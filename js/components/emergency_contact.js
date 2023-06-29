@@ -205,9 +205,7 @@ export default {
                 }
 
                 let peticion = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllStaff", config)).json();
-                console.log(peticion);
                 let info = await ( await fetch(`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getEmergencyContact/${idbtn}`, config)).json();
-                console.log(info);
                 document.querySelector("#emergencyContactContent").innerHTML =`
                                                                                 <h3>EMERGENCY CONTACT</h3>
                                                                                 <div class="contPrint">
@@ -259,7 +257,6 @@ export default {
             let id = btnUpdate.id;
 
             let data = Object.fromEntries(new FormData(e.target));
-            console.log(data);
 
             let config = {
                 method: "PUT",

@@ -164,8 +164,6 @@ export default {
         formTematicUnit.addEventListener("submit", async(e) =>{
             e.preventDefault();
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_thematics_units = data.name_thematics_units.toLocaleUpperCase();
-            data.description = data.description.toLocaleUpperCase();
             
             let config = {
                 method: 'POST',

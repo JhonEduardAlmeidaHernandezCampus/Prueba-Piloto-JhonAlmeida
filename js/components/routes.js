@@ -63,8 +63,6 @@ export default {
         formRoute.addEventListener("submit", async(e) =>{
             e.preventDefault();
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_route = data.name_route.toLocaleUpperCase();
-            data.description = data.description.toLocaleUpperCase();
             
             let config = {
                 method: 'POST',
@@ -84,7 +82,7 @@ export default {
         btnUpdate.forEach((val, id) =>{
             val.addEventListener("click", async(e) =>{
                 let data = val.dataset.id;
-                console.log(data);
+
                 let config = {
                     method: "DELETE",
                     header: {"Content-Type": "application/json"},
@@ -154,8 +152,6 @@ export default {
             let id = btnUpdate.id;
 
             let data = Object.fromEntries(new FormData(e.target));
-            data.name_route = data.name_route.toLocaleUpperCase();
-            data.description = data.description.toLocaleUpperCase();
 
             let config = {
                 method: "PUT",

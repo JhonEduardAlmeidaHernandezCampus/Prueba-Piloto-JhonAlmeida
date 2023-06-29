@@ -243,6 +243,7 @@ export default {
                                                                                 <label for="inputEmail4" class="form-label">ID Theme</label>
                                                                                 <option value="${peticion.MESSAGE[0].Code}">${peticion.MESSAGE[0].name_theme}</option>
                                                                                 <select name="id_theme">
+                                                                                <option value="${info.MESSAGE[0].Code}">${info.MESSAGE[0].name_theme}</option>
                                                                                     ${peticion.MESSAGE.map((val, id) =>{ return `
                                                                                                                                 <option value="${val.Code}">${val.name_theme}</option>
                                                                                                                                 `

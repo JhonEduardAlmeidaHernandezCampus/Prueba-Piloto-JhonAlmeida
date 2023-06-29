@@ -210,9 +210,7 @@ export default {
                 }
 
                 let peticion = await (await fetch("http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getAllModules", config)).json();
-                console.log(peticion);
                 let info = await ( await fetch(`http://localhost/Prueba-Piloto-JhonAlmeida/uploads/getTopics/${idbtn}`, config)).json();
-                console.log(info);
                 document.querySelector("#topicsContent").innerHTML = `
                                                                         <h3>TOPICS</h3>
                                                                         <ul class="breadcrumbs">
@@ -225,7 +223,7 @@ export default {
                                                                                 <div class="col-2 selectorValue">
                                                                                     <label for="inputEmail4" class="form-label">ID Module</label>
                                                                                     <select name="id_module">
-                                                                                    <option value="${peticion.MESSAGE[0].id}">${peticion.MESSAGE[0].name_module}</option>
+                                                                                    <option value="${info.MESSAGE[0].id}">${info.MESSAGE[0].name_module}</option>
                                                                                         ${peticion.MESSAGE.map((val) =>{ return `
                                                                                                                                 <option value="${val.id}">${val.name_module}</option>
                                                                                                                                 `
